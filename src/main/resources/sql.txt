@@ -1,0 +1,55 @@
+create schema if not exists braindose;
+
+create table braindose.orders (orderid text PRIMARY KEY, orderdate timestamp NOT NULL, sku text NOT NULL, description text NOT NULL, amount double precision NOT NULL);
+
+create table braindose.customer (custId integer PRIMARY KEY, name text);
+     
+create table braindose.customerOrders (custId integer, orderid text,PRIMARY KEY (custId, orderid));
+
+
+insert into braindose.customer (custId, name) values (1, 'Andrea Dallas');
+insert into braindose.customer (custId, name) values (2, 'Jessica Bell');
+insert into braindose.customer (custId, name) values (3, 'Anita Albert');
+insert into braindose.customer (custId, name) values (4, 'Jane Pico');
+insert into braindose.customer (custId, name) values (5, 'Danny Flamingo');
+insert into braindose.customer (custId, name) values (6, 'Daniel White');
+insert into braindose.customer (custId, name) values (7, 'John Doe');
+insert into braindose.customer (custId, name) values (8, 'Jenny Doe');
+insert into braindose.customer (custId, name) values (9, 'Anabelle Watson');
+insert into braindose.customer (custId, name) values (10, 'Kenny Kent');
+insert into braindose.customer (custId, name) values (11, 'Petricia Louis');
+insert into braindose.customer (custId, name) values (12, 'Clark Kent');
+insert into braindose.customer (custId, name) values (13, 'Lara Craft');
+insert into braindose.customer (custId, name) values (14, 'Anderson Hilton');
+insert into braindose.customer (custId, name) values (15, 'London Hilton');
+insert into braindose.customer (custId, name) values (16, 'George Gold');
+insert into braindose.customer (custId, name) values (17, 'Mac Apple');
+insert into braindose.customer (custId, name) values (18, 'Wednesday Orange');
+insert into braindose.customer (custId, name) values (19, 'Bill Douglas');
+insert into braindose.customer (custId, name) values (20, 'Clinton Hill');
+insert into braindose.customer (custId, name) values (21, 'Monday Blue');
+insert into braindose.customer (custId, name) values (22, 'Sky High');
+insert into braindose.customer (custId, name) values (23, 'Ocean Deep');
+insert into braindose.customer (custId, name) values (24, 'Star Sparkling');
+insert into braindose.customer (custId, name) values (25, 'Space Unlimited');
+insert into braindose.customer (custId, name) values (26, 'Nano Macro');
+insert into braindose.customer (custId, name) values (27, 'Mini Migthy');
+insert into braindose.customer (custId, name) values (28, 'Huge Small');
+insert into braindose.customer (custId, name) values (29, 'Alfred Hugo');
+insert into braindose.customer (custId, name) values (30, 'Apple Green');
+
+
+INSERT INTO braindose.orders (orderid, orderdate, sku, description, amount) values (1, '2022/11/25', 'Apple Pen 2', 'Apple Pen Generation 2', 199.56);
+INSERT INTO braindose.customerOrders (custId, orderid) values (1, 1);
+
+INSERT INTO braindose.orders (orderid, orderdate, sku, description, amount) values (2, '2022/11/25', 'Apple Magic Keyboard', 'Apple Magic Keyboard for iPad Pro 11.9', 300.56);
+INSERT INTO braindose.customerOrders (custId, orderid) values (1, 2);
+
+INSERT INTO braindose.orders (orderid, orderdate, sku, description, amount) values (3, '2022/11/26', 'Apple Magic Keyboard', 'Apple Magic Keyboard for iPad Air 4th Gen', 250.56);
+INSERT INTO braindose.customerOrders (custId, orderid) values (2, 3);
+
+INSERT INTO braindose.orders (orderid, orderdate, sku, description, amount) values (4, '2022/11/27', 'Apple iPad', 'Apple iPad 5th Generation', 150.56);
+INSERT INTO braindose.customerOrders (custId, orderid) values (1, 4);
+
+INSERT INTO braindose.orders (orderid, orderdate, sku, description, amount) values (5, '2022/11/28', 'Apple Macbook Pro', 'Apple Macbook Pro 16', 6500.00);
+INSERT INTO braindose.customerOrders (custId, orderid) values (2, 5);
