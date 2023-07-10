@@ -1,3 +1,9 @@
+ALTER SYSTEM SET wal_level = logical;
+
+create database dbzdemo;
+
+\c dbzdemo;
+
 create schema if not exists braindose;
 
 create table braindose.orders (orderid text PRIMARY KEY, orderdate timestamp NOT NULL, sku text NOT NULL, description text NOT NULL, amount double precision NOT NULL);

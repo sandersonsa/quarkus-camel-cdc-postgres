@@ -1,5 +1,6 @@
 package xyz.sandersonsa.routes;
 
+import org.apache.camel.LoggingLevel;
 import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.debezium.DebeziumConstants;
@@ -8,11 +9,28 @@ import org.apache.kafka.connect.data.Struct;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import io.debezium.pipeline.signal.Log;
+import io.debezium.time.Timestamp;
+import net.bytebuddy.asm.Advice.Local;
+import xyz.sandersonsa.model.Orders;
+import xyz.sandersonsa.service.OrderService;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
+
+import javax.inject.Inject;
 
 public class PostgresCDCRoute extends RouteBuilder {
+
+       // Service to insert the movie data into Movie and Outbox tables
+       @Inject
+       OrderService orderService;
 
        String DBZ_SETTINGS = "debezium-postgres:dbz-camel?offsetStorageFileName={{app.cdc.dbz.offset.file}}" +
                      "&databaseDbname={{app.cdc.db.name}}" +
@@ -48,7 +66,7 @@ public class PostgresCDCRoute extends RouteBuilder {
                      .log(" sourceDataSnapshotCompleted :: ${headers.CamelDebeziumSourceMetadata}")
                      .log(" base :: ${headers.CamelDebeziumSourceMetadata[db]}")
                      .log(" tabela :: ${headers.CamelDebeziumSourceMetadata[table]}")
-
+                     .log(LoggingLevel.INFO, " ## Message body: ${body}")
                      .process(
                             exchange -> {
                                    Message in = exchange.getIn();
@@ -59,6 +77,26 @@ public class PostgresCDCRoute extends RouteBuilder {
                                    log.info(" ## Value DDL :: {}", valueddl);
 
                                    final Struct body = in.getBody(Struct.class);
+                                   
+                                   //Map -- Null quando o evento é delete
+                                   Map bodyMap = exchange.getIn().getBody(Map.class);
+                                   if(Objects.nonNull(bodyMap)){
+                                          log.info(" ## Body Map :: {}", bodyMap);
+                                          //log.info(" ## orderdate :: {}", bodyMap.get("orderdate"));
+
+                                          double amount = Double.parseDouble(bodyMap.get("amount").toString());
+                                          Orders order = new Orders(
+                                                 bodyMap.get("orderid").toString(),
+                                                 convertToDate(bodyMap.get("orderdate").toString()), //Fri Nov 25 21:00:00 BRT 2022
+                                                 bodyMap.get("sku").toString(),
+                                                 bodyMap.get("description").toString(),
+                                                 amount
+                                          );
+
+                                          log.info(" ## Order :: {}", order);
+                                          orderService.inserOrder(order);       
+                                   }
+                                                                      
                                    if(body == null){
                                           log.info(" ## Body is null");
                                           return;
@@ -69,12 +107,7 @@ public class PostgresCDCRoute extends RouteBuilder {
                                    log.info(" ## Schema fields :: {}", schema.fields());                                   
                                    log.info(" ## Schema fields size :: {}", schema.fields().size());
                                    log.info(" ## Campo name :: {}", schema.field("name"));
-                                   log.info(" # Data :: {}", body.get("orderdate"));
-
-                                   //Map
-                                   Map bodyMap = exchange.getIn().getBody(Map.class);
-                                   log.info(" ## Body Map :: {}", bodyMap);
-
+                                   log.info(" # Data :: {}", body.get("orderdate"));                                   
                                    
                             })
 
@@ -118,6 +151,28 @@ public class PostgresCDCRoute extends RouteBuilder {
                      // .log("JSON data saved into file.")
               ;
 
+       }
+
+       private LocalDateTime convertToLocalDateTime(String date) {
+              //Fri Nov 25 21:00:00 BRT 2022
+              DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy", Locale.US);
+              // String date = "Tuesday, Aug 16, 2016 12:10:56 PM";
+              LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
+              System.out.println(localDateTime);
+              System.out.println(formatter.format(localDateTime));
+              return localDateTime;
+       }
+
+       private Date convertToDate(String str) {
+              SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
+              // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy", Locale.US);              
+              try {
+                     return formatter.parse(str);
+              } catch (ParseException e) {
+                     // TODO Auto-generated catch block
+                     e.printStackTrace();
+              }
+              return null;
        }
 }
 

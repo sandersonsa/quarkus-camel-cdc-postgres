@@ -58,3 +58,32 @@ If you want to learn more about building native executables, please consult http
 - Camel SQL ([guide](https://access.redhat.com/documentation/en-us/red_hat_integration/2.latest/html/camel_extensions_for_quarkus_reference/extensions-sql)): Perform SQL queries
 - Camel Debezium PostgresSQL Connector ([guide](https://camel.apache.org/camel-quarkus/latest/reference/extensions/debezium-postgres.html)): Capture changes from a PostgresSQL database
 # quarkus-camel-cdc-postgres
+
+
+thread #1 - DebeziumConsumer) 1 records sent during previous 00:00:57.163, last recorded offset: {transaction_id=null, lsn_proc=18037008544, lsn_commit=18037008256, lsn=18037008544, txId=14861, ts_usec=1689014146093018}
+thread #1 - DebeziumConsumer)
+
+----- ----- ----- ----- ----- ----- -----
+thread #1 - DebeziumConsumer) Event received from Debezium : Struct{orderid=3,orderdate=Fri Nov 25 21:00:00 BRT 2022,sku=Apple Magic Keyboard,description=Apple Magic Keyboard for iPad Air 4th Gen,amount=250.56}
+thread #1 - DebeziumConsumer)  identificador :: camel-dbz-connector.braindose.orders
+thread #1 - DebeziumConsumer)  operation :: c
+thread #1 - DebeziumConsumer)  sourceDataSnapshotCompleted :: {schema=braindose, sequence=["18037008256","18037008544"], xmin=null, connector=postgresql, lsn=18037008544, name=camel-dbz-connector, txId=14861, version=1.9.6.Final, ts_ms=1689014146093, snapshot=false, db=dbzdemo, table=orders}
+thread #1 - DebeziumConsumer)  base :: dbzdemo
+thread #1 - DebeziumConsumer)  tabela :: orders
+thread #1 - DebeziumConsumer)  ## Message body: Struct{orderid=3,orderdate=Fri Nov 25 21:00:00 BRT 2022,sku=Apple Magic Keyboard,description=Apple Magic Keyboard for iPad Air 4th Gen,amount=250.56}
+thread #1 - DebeziumConsumer)  ## Value :: null
+thread #1 - DebeziumConsumer)  ## Value DDL :: null
+thread #1 - DebeziumConsumer)  ## Body :: Struct{orderid=3,orderdate=Fri Nov 25 21:00:00 BRT 2022,sku=Apple Magic Keyboard,description=Apple Magic Keyboard for iPad Air 4th Gen,amount=250.56}
+thread #1 - DebeziumConsumer)  ## Schema :: Schema{camel_dbz_connector.braindose.orders.Value:STRUCT}
+thread #1 - DebeziumConsumer)  ## Schema fields ::
+    [
+        Field{name=orderid, index=0, schema=Schema{STRING}},
+        Field{name=orderdate, index=1, schema=Schema{org.apache.kafka.connect.data.Timestamp:INT64}},
+        Field{name=sku, index=2, schema=Schema{STRING}},
+        Field{name=description, index=3, schema=Schema{STRING}},
+        Field{name=amount, index=4, schema=Schema{FLOAT64}}
+    ]
+thread #1 - DebeziumConsumer)  ## Schema fields size :: 5
+thread #1 - DebeziumConsumer)  ## Campo name :: null
+thread #1 - DebeziumConsumer)  # Data :: Fri Nov 25 21:00:00 BRT 2022
+thread #1 - DebeziumConsumer)  ## Body Map :: {amount=250.56, orderid=3, description=Apple Magic Keyboard for iPad Air 4th Gen, orderdate=Fri Nov 25 21:00:00 BRT 2022, sku=Apple Magic Keyboard}
