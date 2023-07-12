@@ -1,0 +1,990 @@
+
+--
+Tests paused
+Press [r] to resume testing, [o] Toggle test output, [:] for the terminal, [h] for more options>
+2023-07-10 17:40:51,664 INFO  [io.deb.emb.EmbeddedEngine] (Camel (camel-2) thread #2 - DebeziumConsumer) Stopping the task and engine
+2023-07-10 17:40:51,664 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-2) thread #2 - DebeziumConsumer) Stopping down connector
+2023-07-10 17:40:51,669 INFO  [io.deb.jdb.JdbcConnection] (pool-22-thread-1) Connection gracefully closed
+2023-07-10 17:40:51,669 INFO  [io.deb.jdb.JdbcConnection] (pool-23-thread-1) Connection gracefully closed
+2023-07-10 17:40:51,669 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Finished streaming
+2023-07-10 17:40:51,670 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Connected metrics set to 'false'
+2023-07-10 17:40:51,670 INFO  [org.apa.kaf.con.sto.FileOffsetBackingStore] (Camel (camel-2) thread #2 - DebeziumConsumer) Stopped FileOffsetBackingStore
+2023-07-10 17:40:51,670 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) Routes stopped (stopped:1)
+2023-07-10 17:40:51,671 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread)     Stopped route2 (debezium-postgres://dbz-camel)
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  32:18 min
+[INFO] Finished at: 2023-07-10T17:40:52-03:00
+[INFO] ------------------------------------------------------------------------
+╭─    ~/arquivos/RedHat/git/camel-cdc-postgres  on   cnh-popular !4 ?3 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  took 32m 19s   at 17:40:52 
+╰─ cd ..
+╭─    ~/arquivos/RedHat/git ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  at 18:01:12 
+╰─ git clone https://github.com/apache/camel-quarkus-examples.git
+Cloning into 'camel-quarkus-examples'...
+remote: Enumerating objects: 6118, done.
+remote: Counting objects: 100% (2082/2082), done.
+remote: Compressing objects: 100% (153/153), done.
+remote: Total 6118 (delta 1942), reused 2014 (delta 1909), pack-reused 4036
+Receiving objects: 100% (6118/6118), 916.31 KiB | 2.92 MiB/s, done.
+Resolving deltas: 100% (3136/3136), done.
+╭─    ~/arquivos/RedHat/git ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+╭─    ~/arquivos/RedHat/git ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+╭─    ~/arquivos/RedHat/git ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  at 18:01:16 
+╰─ podman stop postgres14
+postgres14
+╭─    ~/arquivos/RedHat/git ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  at 18:04:14 
+╰─ podman stop postgres14_dr
+Error: no container with name or ID "postgres14_dr" found: no such container
+╭─    ~/arquivos/RedHat/git ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 125 ✘  at 18:04:21 
+╰─ podman stop postgres14-dr
+postgres14-dr
+╭─    ~/arquivos/RedHat/git ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  at 18:04:24 
+╰─ podman machine stop
+Waiting for VM to exit...
+Machine "podman-machine-default" stopped successfully
+╭─    ~/arquivos/RedHat/git ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  too
+╭─    ~/arquivos/RedHat/git ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  too
+╭─    ~/arquivos/RedHat/git ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  took 33s   at 18:05:02 
+╰─
+╭─    ~/arquivos/RedHat/git ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  t
+╭─    ~/arquivos/RedHat/git ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  took 33s   at 18:05:02 
+╰─
+╭─    ~/arquivos/RedHat/git ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  took 33s   at 18:05:02 
+╰─ cd camel-cdc-postgres
+╭─    ~/arquivos/RedHat/git/camel-cdc-postgres  on   cnh-popular !4 ?3 ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  at 23:34:20 
+╰─ ./mvnw quarkus:dev
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -----------------< xyz.sandersonsa:camel-cdc-postgres >-----------------
+[INFO] Building camel-cdc-postgres 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- quarkus-maven-plugin:2.13.7.SP2-redhat-00002:dev (default-cli) @ camel-cdc-postgres ---
+[INFO] Invoking org.apache.maven.plugins:maven-resources-plugin:2.6:resources @ camel-cdc-postgres
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Invoking com.redhat.quarkus.platform:quarkus-maven-plugin:2.13.7.SP2-redhat-00002:generate-code @ camel-cdc-postgres
+[INFO] Invoking org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile @ camel-cdc-postgres
+[INFO] Nothing to compile - all classes are up to date
+[INFO] Invoking org.apache.maven.plugins:maven-resources-plugin:2.6:testResources @ camel-cdc-postgres
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/src/test/resources
+[INFO] Invoking com.redhat.quarkus.platform:quarkus-maven-plugin:2.13.7.SP2-redhat-00002:generate-code-tests @ camel-cdc-postgres
+[INFO] Invoking org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile @ camel-cdc-postgres
+[INFO] No sources to compile
+Listening for transport dt_socket at address: 5005
+2023-07-10 23:34:31,155 WARN  [io.qua.arc.dep.SplitPackageProcessor] (build-12) Detected a split package usage which is considered a bad practice and should be avoided. Following packages were detected in multiple archives:
+- "org.apache.camel.component.debezium.configuration" found in [org.apache.camel:camel-debezium-common::jar, org.apache.camel:camel-debezium-postgres::jar]
+- "org.apache.camel.component.debezium" found in [org.apache.camel:camel-debezium-common::jar, org.apache.camel:camel-debezium-postgres::jar]
+__  ____  __  _____   ___  __ ____  ______
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/
+ -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/
+2023-07-10 23:34:31,797 WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Connection to localhost:5567 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+2023-07-10 23:34:31,798 WARN  [org.hib.eng.jdb.env.int.JdbcEnvironmentInitiator] (JPA Startup Thread: <default>) HHH000342: Could not obtain connection to query metadata: org.postgresql.util.PSQLException: Connection to localhost:5567 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:319)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:247)
+	at org.postgresql.Driver.makeConnection(Driver.java:434)
+	at org.postgresql.Driver.connect(Driver.java:291)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:535)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:516)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:241)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:109)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	... 12 more
+
+
+2023-07-10 23:34:31,892 INFO  [org.apa.cam.qua.cor.CamelBootstrapRecorder] (Quarkus Main Thread) Bootstrap runtime: org.apache.camel.quarkus.main.CamelMainRuntime
+2023-07-10 23:34:31,893 INFO  [org.apa.cam.mai.MainSupport] (Quarkus Main Thread) Apache Camel (Main) 3.18.3.redhat-00024 is starting
+2023-07-10 23:34:31,965 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Apache Camel 3.18.3.redhat-00024 (camel-1) is starting
+2023-07-10 23:34:32,024 INFO  [org.apa.kaf.con.jso.JsonConverterConfig] (Quarkus Main Thread) JsonConverterConfig values:
+	converter.type = key
+	decimal.format = BASE64
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+
+2023-07-10 23:34:32,025 INFO  [org.apa.kaf.con.jso.JsonConverterConfig] (Quarkus Main Thread) JsonConverterConfig values:
+	converter.type = value
+	decimal.format = BASE64
+	schemas.cache.size = 1000
+	schemas.enable = false
+
+
+2023-07-10 23:34:32,029 INFO  [io.deb.emb.EmbeddedEngine$EmbeddedConfig] (Quarkus Main Thread) EmbeddedConfig values:
+	access.control.allow.methods =
+	access.control.allow.origin =
+	admin.listeners = null
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	config.providers = []
+	connector.client.config.override.policy = All
+	header.converter = class org.apache.kafka.connect.storage.SimpleHeaderConverter
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	listeners = [http://:8083]
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 60000
+	offset.flush.timeout.ms = 5000
+	offset.storage.file.filename = /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/offset-file-1.dat
+	offset.storage.partitions = 0
+	offset.storage.replication.factor = 0
+	offset.storage.topic =
+	plugin.path = null
+	response.http.headers.config =
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	ssl.cipher.suites = null
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	task.shutdown.graceful.timeout.ms = 5000
+	topic.creation.enable = true
+	topic.tracking.allow.reset = true
+	topic.tracking.enable = true
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+
+
+2023-07-10 23:34:32,029 WARN  [org.apa.kaf.con.run.WorkerConfig] (Quarkus Main Thread) The worker has been configured with one or more internal converter properties ([internal.key.converter, internal.value.converter]). Support for these properties was deprecated in version 2.0 and removed in version 3.0, and specifying them will have no effect. Instead, an instance of the JsonConverter with schemas.enable set to false will be used. For more information, please visit http://kafka.apache.org/documentation/#upgrade and consult the upgrade notesfor the 3.0 release.
+2023-07-10 23:34:32,030 WARN  [org.apa.kaf.con.run.WorkerConfig] (Quarkus Main Thread) Variables cannot be used in the 'plugin.path' property, since the property is used by plugin scanning before the config providers that replace the variables are initialized. The raw value 'null' was used for plugin scanning, as opposed to the transformed value 'null', and this may cause unexpected results.
+2023-07-10 23:34:32,031 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread) Property-placeholders summary
+2023-07-10 23:34:32,031 INFO  [org.apa.kaf.con.sto.FileOffsetBackingStore] (Camel (camel-1) thread #1 - DebeziumConsumer) Starting FileOffsetBackingStore with file /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/offset-file-1.dat
+2023-07-10 23:34:32,032 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.offset.file=/Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/offset-file-1.dat
+2023-07-10 23:34:32,033 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.name=dbzdemo
+2023-07-10 23:34:32,033 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.host=localhost
+2023-07-10 23:34:32,033 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.port=5566
+2023-07-10 23:34:32,033 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.user=xxxxxx
+2023-07-10 23:34:32,033 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.password=xxxxxx
+2023-07-10 23:34:32,034 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.dbservername=camel-dbz-connector
+2023-07-10 23:34:32,037 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.dbhistoryfile=/Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/history-file-1.dat
+2023-07-10 23:34:32,037 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.schemaincludelist=braindose
+2023-07-10 23:34:32,037 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.tableincludelist=braindose.orders
+2023-07-10 23:34:32,038 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Routes startup (started:1)
+2023-07-10 23:34:32,038 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread)     Started route1 (debezium-postgres://dbz-camel)
+2023-07-10 23:34:32,038 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Apache Camel 3.18.3.redhat-00024 (camel-1) started in 113ms (build:0ms init:40ms start:73ms)
+2023-07-10 23:34:32,041 INFO  [io.quarkus] (Quarkus Main Thread) camel-cdc-postgres 1.0.0-SNAPSHOT on JVM (powered by Quarkus 2.13.7.Final-redhat-00003) started in 1.295s.
+2023-07-10 23:34:32,041 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2023-07-10 23:34:32,041 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, camel-bean, camel-core, camel-debezium-postgres, camel-direct, camel-file, camel-jackson, camel-language, camel-sql, cdi, hibernate-orm, hibernate-orm-panache, jdbc-postgresql, narayana-jta, smallrye-context-propagation]
+2023-07-10 23:34:32,042 WARN  [io.agr.pool] (agroal-11) Datasource '<default>': Connection to localhost:5567 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2023-07-10 23:34:32,043 WARN  [org.hib.eng.jdb.spi.SqlExceptionHelper] (Hibernate post-boot validation thread for <default>) SQL Error: 0, SQLState: 08001
+2023-07-10 23:34:32,043 ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (Hibernate post-boot validation thread for <default>) Connection to localhost:5567 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2023-07-10 23:34:32,043 ERROR [io.qua.hib.orm.run.sch.SchemaManagementIntegrator] (Hibernate post-boot validation thread for <default>) Failed to run post-boot validation: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.resource.transaction.backend.jta.internal.DdlTransactionIsolatorJtaImpl.<init>(DdlTransactionIsolatorJtaImpl.java:62)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorBuilderImpl.buildDdlTransactionIsolator(JtaTransactionCoordinatorBuilderImpl.java:53)
+	at org.hibernate.tool.schema.internal.HibernateSchemaManagementTool.getDdlTransactionIsolator(HibernateSchemaManagementTool.java:205)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:67)
+	at io.quarkus.hibernate.orm.runtime.schema.SchemaManagementIntegrator.runPostBootValidation(SchemaManagementIntegrator.java:135)
+	at io.quarkus.hibernate.orm.runtime.HibernateOrmRecorder$5.run(HibernateOrmRecorder.java:142)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5567 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:319)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:247)
+	at org.postgresql.Driver.makeConnection(Driver.java:434)
+	at org.postgresql.Driver.connect(Driver.java:291)
+	at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:226)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:535)
+	at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:516)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	... 1 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:241)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:109)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	... 12 more
+
+
+2023-07-10 23:34:32,050 WARN  [io.deb.con.pos.PostgresConnectorConfig] (Camel (camel-1) thread #1 - DebeziumConsumer) Configuration property 'truncate.handling.mode' is deprecated and will be removed in future versions. Please use 'skipped.operations' instead.
+2023-07-10 23:34:32,052 WARN  [io.deb.con.pos.PostgresConnectorConfig] (Camel (camel-1) thread #1 - DebeziumConsumer) Configuration property 'toasted.value.placeholder' is deprecated and will be removed in future versions. Please use 'unavailable.value.placeholder' instead.
+2023-07-10 23:34:32,052 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer) Starting PostgresConnectorTask with configuration:
+2023-07-10 23:34:32,053 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    connector.class = io.debezium.connector.postgresql.PostgresConnector
+2023-07-10 23:34:32,053 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    query.fetch.size = 0
+2023-07-10 23:34:32,053 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    publication.name = dbz_publication
+2023-07-10 23:34:32,053 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    schema.include.list = braindose
+2023-07-10 23:34:32,053 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    schema.refresh.mode = columns_diff
+2023-07-10 23:34:32,054 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    slot.max.retries = 6
+2023-07-10 23:34:32,054 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.sslmode = disable
+2023-07-10 23:34:32,054 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    unavailable.value.placeholder = __debezium_unavailable_value
+2023-07-10 23:34:32,054 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    poll.interval.ms = 500
+2023-07-10 23:34:32,054 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    interval.handling.mode = numeric
+2023-07-10 23:34:32,054 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    heartbeat.topics.prefix = __debezium-heartbeat
+2023-07-10 23:34:32,054 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.fetch.size = 0
+2023-07-10 23:34:32,054 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    status.update.interval.ms = 10000
+2023-07-10 23:34:32,055 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-07-10 23:34:32,055 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.lock.timeout.ms = 10000
+2023-07-10 23:34:32,055 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.commit.policy = io.debezium.engine.spi.OffsetCommitPolicy$PeriodicCommitOffsetPolicy
+2023-07-10 23:34:32,055 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.dbname = dbzdemo
+2023-07-10 23:34:32,055 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.user = admin
+2023-07-10 23:34:32,055 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    sanitize.field.names = false
+2023-07-10 23:34:32,055 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.storage = org.apache.kafka.connect.storage.FileOffsetBackingStore
+2023-07-10 23:34:32,056 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    source.struct.version = v2
+2023-07-10 23:34:32,056 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    heartbeat.interval.ms = 0
+2023-07-10 23:34:32,056 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    plugin.name = pgoutput
+2023-07-10 23:34:32,056 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.password = ********
+2023-07-10 23:34:32,056 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    name = dbz-camel
+2023-07-10 23:34:32,056 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    internal.value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-07-10 23:34:32,056 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    max.batch.size = 2048
+2023-07-10 23:34:32,056 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    skipped.operations = t
+2023-07-10 23:34:32,057 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.mode = initial
+2023-07-10 23:34:32,057 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    max.queue.size = 8192
+2023-07-10 23:34:32,057 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    slot.name = debezium
+2023-07-10 23:34:32,057 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    incremental.snapshot.chunk.size = 1024
+2023-07-10 23:34:32,057 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    hstore.handling.mode = json
+2023-07-10 23:34:32,057 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    retriable.restart.connector.wait.ms = 10000
+2023-07-10 23:34:32,058 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.delay.ms = 0
+2023-07-10 23:34:32,058 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    provide.transaction.metadata = false
+2023-07-10 23:34:32,058 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    tombstones.on.delete = false
+2023-07-10 23:34:32,058 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    slot.retry.delay.ms = 10000
+2023-07-10 23:34:32,058 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.storage.file.filename = /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/offset-file-1.dat
+2023-07-10 23:34:32,058 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    decimal.handling.mode = precise
+2023-07-10 23:34:32,058 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    binary.handling.mode = bytes
+2023-07-10 23:34:32,058 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    include.schema.comments = false
+2023-07-10 23:34:32,059 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.storage.partitions = 0
+2023-07-10 23:34:32,059 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    table.ignore.builtin = true
+2023-07-10 23:34:32,059 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-07-10 23:34:32,059 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.tcpKeepAlive = true
+2023-07-10 23:34:32,059 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    publication.autocreate.mode = all_tables
+2023-07-10 23:34:32,059 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.history.file.filename = /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/history-file-1.dat
+2023-07-10 23:34:32,060 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    slot.drop.on.stop = false
+2023-07-10 23:34:32,060 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    max.queue.size.in.bytes = 0
+2023-07-10 23:34:32,060 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    transaction.topic = ${database.server.name}.transaction
+2023-07-10 23:34:32,060 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    xmin.fetch.interval.ms = 0
+2023-07-10 23:34:32,060 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    time.precision.mode = connect
+2023-07-10 23:34:32,060 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.flush.timeout.ms = 5000
+2023-07-10 23:34:32,061 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.server.name = camel-dbz-connector
+2023-07-10 23:34:32,061 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    event.processing.failure.handling.mode = fail
+2023-07-10 23:34:32,061 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.max.threads = 1
+2023-07-10 23:34:32,061 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.port = 5566
+2023-07-10 23:34:32,061 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.flush.interval.ms = 60000
+2023-07-10 23:34:32,061 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    internal.key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-07-10 23:34:32,062 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    include.unknown.datatypes = false
+2023-07-10 23:34:32,062 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.hostname = localhost
+2023-07-10 23:34:32,062 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    schema.name.adjustment.mode = avro
+2023-07-10 23:34:32,062 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.storage.replication.factor = 0
+2023-07-10 23:34:32,062 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    table.include.list = braindose.orders
+2023-07-10 23:34:32,075 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer) Stopping down connector
+2023-07-10 23:34:32,076 INFO  [org.apa.kaf.con.sto.FileOffsetBackingStore] (Camel (camel-1) thread #1 - DebeziumConsumer) Stopped FileOffsetBackingStore
+2023-07-10 23:34:32,076 ERROR [io.deb.emb.EmbeddedEngine] (Camel (camel-1) thread #1 - DebeziumConsumer) Unable to initialize and start connector's task class 'io.debezium.connector.postgresql.PostgresConnectorTask' with config: {connector.class=io.debezium.connector.postgresql.PostgresConnector, query.fetch.size=0, publication.name=dbz_publication, schema.include.list=braindose, schema.refresh.mode=columns_diff, slot.max.retries=6, unavailable.value.placeholder=__debezium_unavailable_value, database.sslmode=disable, poll.interval.ms=500, interval.handling.mode=numeric, heartbeat.topics.prefix=__debezium-heartbeat, snapshot.fetch.size=0, status.update.interval.ms=10000, key.converter=org.apache.kafka.connect.json.JsonConverter, snapshot.lock.timeout.ms=10000, offset.commit.policy=io.debezium.engine.spi.OffsetCommitPolicy$PeriodicCommitOffsetPolicy, database.dbname=dbzdemo, database.user=admin, sanitize.field.names=false, offset.storage=org.apache.kafka.connect.storage.FileOffsetBackingStore, source.struct.version=v2, heartbeat.interval.ms=0, plugin.name=pgoutput, database.password=********, name=dbz-camel, internal.value.converter=org.apache.kafka.connect.json.JsonConverter, max.batch.size=2048, skipped.operations=t, snapshot.mode=initial, max.queue.size=8192, slot.name=debezium, incremental.snapshot.chunk.size=1024, hstore.handling.mode=json, retriable.restart.connector.wait.ms=10000, snapshot.delay.ms=0, provide.transaction.metadata=false, tombstones.on.delete=false, slot.retry.delay.ms=10000, offset.storage.file.filename=/Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/offset-file-1.dat, decimal.handling.mode=precise, binary.handling.mode=bytes, include.schema.comments=false, offset.storage.partitions=0, table.ignore.builtin=true, value.converter=org.apache.kafka.connect.json.JsonConverter, database.tcpKeepAlive=true, publication.autocreate.mode=all_tables, database.history.file.filename=/Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/history-file-1.dat, slot.drop.on.stop=false, max.queue.size.in.bytes=0, transaction.topic=${database.server.name}.transaction, xmin.fetch.interval.ms=0, time.precision.mode=connect, offset.flush.timeout.ms=5000, database.server.name=camel-dbz-connector, event.processing.failure.handling.mode=fail, snapshot.max.threads=1, database.port=5566, offset.flush.interval.ms=60000, internal.key.converter=org.apache.kafka.connect.json.JsonConverter, include.unknown.datatypes=false, database.hostname=localhost, schema.name.adjustment.mode=avro, offset.storage.replication.factor=0, table.include.list=braindose.orders}: io.debezium.DebeziumException: Couldn't obtain encoding for database dbzdemo
+	at io.debezium.connector.postgresql.connection.PostgresConnection.getDatabaseCharset(PostgresConnection.java:487)
+	at io.debezium.connector.postgresql.PostgresConnectorTask.start(PostgresConnectorTask.java:75)
+	at io.debezium.connector.common.BaseSourceTask.start(BaseSourceTask.java:133)
+	at io.debezium.embedded.EmbeddedEngine.run(EmbeddedEngine.java:760)
+	at io.debezium.embedded.ConvertingEngineBuilder$2.run(ConvertingEngineBuilder.java:192)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5566 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:319)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:247)
+	at org.postgresql.Driver.makeConnection(Driver.java:434)
+	at org.postgresql.Driver.connect(Driver.java:291)
+	at io.debezium.jdbc.JdbcConnection.lambda$patternBasedFactory$1(JdbcConnection.java:244)
+	at io.debezium.jdbc.JdbcConnection.connection(JdbcConnection.java:888)
+	at io.debezium.jdbc.JdbcConnection.connection(JdbcConnection.java:883)
+	at io.debezium.connector.postgresql.connection.PostgresConnection.getDatabaseCharset(PostgresConnection.java:484)
+	... 9 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:241)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:109)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	... 17 more
+
+
+2023-07-10 23:35:06,487 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) Apache Camel 3.18.3.redhat-00024 (camel-1) is shutting down
+2023-07-10 23:35:06,490 INFO  [io.deb.emb.EmbeddedEngine] (Shutdown thread) Stopping the embedded engine
+2023-07-10 23:35:06,491 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) Routes stopped (stopped:1)
+2023-07-10 23:35:06,491 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread)     Stopped route1 (debezium-postgres://dbz-camel)
+2023-07-10 23:35:06,492 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Shutdown thread) Apache Camel 3.18.3.redhat-00024 (camel-1) shutdown in 5ms (uptime:34s)
+2023-07-10 23:35:06,503 INFO  [io.quarkus] (Shutdown thread) camel-cdc-postgres stopped in 0.019s
+
+
+--
+Press [:] for the terminal, [h] for more options>
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  38.879 s
+[INFO] Finished at: 2023-07-10T23:35:07-03:00
+[INFO] ------------------------------------------------------------------------
+╭─    ~/arquivos/RedHat/git/camel-cdc-postgres  on   cnh-popular !4 ?3 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ✔  took 41s   at 23:35:07 
+╰─ ./mvnw quarkus:dev
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -----------------< xyz.sandersonsa:camel-cdc-postgres >-----------------
+[INFO] Building camel-cdc-postgres 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- quarkus-maven-plugin:2.13.7.SP2-redhat-00002:dev (default-cli) @ camel-cdc-postgres ---
+[INFO] Invoking org.apache.maven.plugins:maven-resources-plugin:2.6:resources @ camel-cdc-postgres
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Invoking com.redhat.quarkus.platform:quarkus-maven-plugin:2.13.7.SP2-redhat-00002:generate-code @ camel-cdc-postgres
+[INFO] Invoking org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile @ camel-cdc-postgres
+[INFO] Nothing to compile - all classes are up to date
+[INFO] Invoking org.apache.maven.plugins:maven-resources-plugin:2.6:testResources @ camel-cdc-postgres
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/src/test/resources
+[INFO] Invoking com.redhat.quarkus.platform:quarkus-maven-plugin:2.13.7.SP2-redhat-00002:generate-code-tests @ camel-cdc-postgres
+[INFO] Invoking org.apache.maven.plugins:maven-compiler-plugin:3.8.1:testCompile @ camel-cdc-postgres
+[INFO] No sources to compile
+Listening for transport dt_socket at address: 5005
+2023-07-10 23:35:23,779 WARN  [io.qua.arc.dep.SplitPackageProcessor] (build-9) Detected a split package usage which is considered a bad practice and should be avoided. Following packages were detected in multiple archives:
+- "org.apache.camel.component.debezium.configuration" found in [org.apache.camel:camel-debezium-common::jar, org.apache.camel:camel-debezium-postgres::jar]
+- "org.apache.camel.component.debezium" found in [org.apache.camel:camel-debezium-common::jar, org.apache.camel:camel-debezium-postgres::jar]
+__  ____  __  _____   ___  __ ____  ______
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/
+ -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/
+2023-07-10 23:35:24,671 INFO  [org.apa.cam.qua.cor.CamelBootstrapRecorder] (Quarkus Main Thread) Bootstrap runtime: org.apache.camel.quarkus.main.CamelMainRuntime
+
+2023-07-10 23:35:24,672 INFO  [org.apa.cam.mai.MainSupport] (Quarkus Main Thread) Apache Camel (Main) 3.18.3.redhat-00024 is starting
+2023-07-10 23:35:24,744 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Apache Camel 3.18.3.redhat-00024 (camel-1) is starting
+2023-07-10 23:35:24,804 INFO  [org.apa.kaf.con.jso.JsonConverterConfig] (Quarkus Main Thread) JsonConverterConfig values:
+	converter.type = key
+	decimal.format = BASE64
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+
+2023-07-10 23:35:24,804 INFO  [org.apa.kaf.con.jso.JsonConverterConfig] (Quarkus Main Thread) JsonConverterConfig values:
+	converter.type = value
+	decimal.format = BASE64
+	schemas.cache.size = 1000
+	schemas.enable = false
+
+
+2023-07-10 23:35:24,808 INFO  [io.deb.emb.EmbeddedEngine$EmbeddedConfig] (Quarkus Main Thread) EmbeddedConfig values:
+	access.control.allow.methods =
+	access.control.allow.origin =
+	admin.listeners = null
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	config.providers = []
+	connector.client.config.override.policy = All
+	header.converter = class org.apache.kafka.connect.storage.SimpleHeaderConverter
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	listeners = [http://:8083]
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 60000
+	offset.flush.timeout.ms = 5000
+	offset.storage.file.filename = /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/offset-file-1.dat
+	offset.storage.partitions = 0
+	offset.storage.replication.factor = 0
+	offset.storage.topic =
+	plugin.path = null
+	response.http.headers.config =
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	ssl.cipher.suites = null
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	task.shutdown.graceful.timeout.ms = 5000
+	topic.creation.enable = true
+	topic.tracking.allow.reset = true
+	topic.tracking.enable = true
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+
+
+2023-07-10 23:35:24,808 WARN  [org.apa.kaf.con.run.WorkerConfig] (Quarkus Main Thread) The worker has been configured with one or more internal converter properties ([internal.key.converter, internal.value.converter]). Support for these properties was deprecated in version 2.0 and removed in version 3.0, and specifying them will have no effect. Instead, an instance of the JsonConverter with schemas.enable set to false will be used. For more information, please visit http://kafka.apache.org/documentation/#upgrade and consult the upgrade notesfor the 3.0 release.
+2023-07-10 23:35:24,809 WARN  [org.apa.kaf.con.run.WorkerConfig] (Quarkus Main Thread) Variables cannot be used in the 'plugin.path' property, since the property is used by plugin scanning before the config providers that replace the variables are initialized. The raw value 'null' was used for plugin scanning, as opposed to the transformed value 'null', and this may cause unexpected results.
+2023-07-10 23:35:24,810 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread) Property-placeholders summary
+2023-07-10 23:35:24,810 INFO  [org.apa.kaf.con.sto.FileOffsetBackingStore] (Camel (camel-1) thread #1 - DebeziumConsumer) Starting FileOffsetBackingStore with file /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/offset-file-1.dat
+2023-07-10 23:35:24,811 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.offset.file=/Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/offset-file-1.dat
+2023-07-10 23:35:24,812 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.name=dbzdemo
+2023-07-10 23:35:24,812 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.host=localhost
+2023-07-10 23:35:24,812 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.port=5566
+2023-07-10 23:35:24,812 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.user=xxxxxx
+2023-07-10 23:35:24,812 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.db.password=xxxxxx
+2023-07-10 23:35:24,813 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.dbservername=camel-dbz-connector
+2023-07-10 23:35:24,813 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.dbhistoryfile=/Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/history-file-1.dat
+2023-07-10 23:35:24,813 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.schemaincludelist=braindose
+2023-07-10 23:35:24,813 INFO  [org.apa.cam.mai.BaseMainSupport] (Quarkus Main Thread)     [MicroProfilePropertiesSource] app.cdc.dbz.tableincludelist=braindose.orders
+2023-07-10 23:35:24,814 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Routes startup (started:1)
+2023-07-10 23:35:24,814 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread)     Started route1 (debezium-postgres://dbz-camel)
+2023-07-10 23:35:24,814 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (Quarkus Main Thread) Apache Camel 3.18.3.redhat-00024 (camel-1) started in 109ms (build:0ms init:39ms start:70ms)
+2023-07-10 23:35:24,817 INFO  [io.quarkus] (Quarkus Main Thread) camel-cdc-postgres 1.0.0-SNAPSHOT on JVM (powered by Quarkus 2.13.7.Final-redhat-00003) started in 1.433s.
+2023-07-10 23:35:24,817 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2023-07-10 23:35:24,817 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, camel-bean, camel-core, camel-debezium-postgres, camel-direct, camel-file, camel-jackson, camel-language, camel-sql, cdi, hibernate-orm, hibernate-orm-panache, jdbc-postgresql, narayana-jta, smallrye-context-propagation]
+2023-07-10 23:35:24,829 WARN  [io.deb.con.pos.PostgresConnectorConfig] (Camel (camel-1) thread #1 - DebeziumConsumer) Configuration property 'truncate.handling.mode' is deprecated and will be removed in future versions. Please use 'skipped.operations' instead.
+2023-07-10 23:35:24,831 WARN  [io.deb.con.pos.PostgresConnectorConfig] (Camel (camel-1) thread #1 - DebeziumConsumer) Configuration property 'toasted.value.placeholder' is deprecated and will be removed in future versions. Please use 'unavailable.value.placeholder' instead.
+2023-07-10 23:35:24,831 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer) Starting PostgresConnectorTask with configuration:
+2023-07-10 23:35:24,831 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    connector.class = io.debezium.connector.postgresql.PostgresConnector
+2023-07-10 23:35:24,832 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    query.fetch.size = 0
+2023-07-10 23:35:24,832 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    publication.name = dbz_publication
+2023-07-10 23:35:24,832 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    schema.include.list = braindose
+2023-07-10 23:35:24,832 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    schema.refresh.mode = columns_diff
+2023-07-10 23:35:24,832 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    slot.max.retries = 6
+2023-07-10 23:35:24,833 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.sslmode = disable
+2023-07-10 23:35:24,833 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    unavailable.value.placeholder = __debezium_unavailable_value
+2023-07-10 23:35:24,833 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    poll.interval.ms = 500
+2023-07-10 23:35:24,833 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    interval.handling.mode = numeric
+2023-07-10 23:35:24,833 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    heartbeat.topics.prefix = __debezium-heartbeat
+2023-07-10 23:35:24,833 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.fetch.size = 0
+2023-07-10 23:35:24,834 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    status.update.interval.ms = 10000
+2023-07-10 23:35:24,834 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-07-10 23:35:24,834 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.lock.timeout.ms = 10000
+2023-07-10 23:35:24,834 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.commit.policy = io.debezium.engine.spi.OffsetCommitPolicy$PeriodicCommitOffsetPolicy
+2023-07-10 23:35:24,834 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.dbname = dbzdemo
+2023-07-10 23:35:24,834 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.user = admin
+2023-07-10 23:35:24,834 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    sanitize.field.names = false
+2023-07-10 23:35:24,835 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.storage = org.apache.kafka.connect.storage.FileOffsetBackingStore
+2023-07-10 23:35:24,835 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    source.struct.version = v2
+2023-07-10 23:35:24,835 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    heartbeat.interval.ms = 0
+2023-07-10 23:35:24,835 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    plugin.name = pgoutput
+2023-07-10 23:35:24,835 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.password = ********
+2023-07-10 23:35:24,835 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    name = dbz-camel
+2023-07-10 23:35:24,835 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    internal.value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-07-10 23:35:24,835 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    max.batch.size = 2048
+2023-07-10 23:35:24,835 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    skipped.operations = t
+2023-07-10 23:35:24,836 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.mode = initial
+2023-07-10 23:35:24,836 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    max.queue.size = 8192
+2023-07-10 23:35:24,836 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    slot.name = debezium
+2023-07-10 23:35:24,836 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    incremental.snapshot.chunk.size = 1024
+2023-07-10 23:35:24,836 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    hstore.handling.mode = json
+2023-07-10 23:35:24,836 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    retriable.restart.connector.wait.ms = 10000
+2023-07-10 23:35:24,836 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.delay.ms = 0
+2023-07-10 23:35:24,837 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    provide.transaction.metadata = false
+2023-07-10 23:35:24,837 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    tombstones.on.delete = false
+2023-07-10 23:35:24,837 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    slot.retry.delay.ms = 10000
+2023-07-10 23:35:24,837 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.storage.file.filename = /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/offset-file-1.dat
+2023-07-10 23:35:24,837 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    decimal.handling.mode = precise
+2023-07-10 23:35:24,837 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    binary.handling.mode = bytes
+2023-07-10 23:35:24,837 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    include.schema.comments = false
+2023-07-10 23:35:24,837 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.storage.partitions = 0
+2023-07-10 23:35:24,838 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    table.ignore.builtin = true
+2023-07-10 23:35:24,838 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    value.converter = org.apache.kafka.connect.json.JsonConverter
+2023-07-10 23:35:24,838 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.tcpKeepAlive = true
+2023-07-10 23:35:24,838 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    publication.autocreate.mode = all_tables
+2023-07-10 23:35:24,838 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.history.file.filename = /Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/history-file-1.dat
+2023-07-10 23:35:24,838 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    slot.drop.on.stop = false
+2023-07-10 23:35:24,838 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    max.queue.size.in.bytes = 0
+2023-07-10 23:35:24,838 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    transaction.topic = ${database.server.name}.transaction
+2023-07-10 23:35:24,839 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    xmin.fetch.interval.ms = 0
+2023-07-10 23:35:24,839 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    time.precision.mode = connect
+2023-07-10 23:35:24,839 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.flush.timeout.ms = 5000
+2023-07-10 23:35:24,839 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.server.name = camel-dbz-connector
+2023-07-10 23:35:24,839 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    event.processing.failure.handling.mode = fail
+2023-07-10 23:35:24,839 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    snapshot.max.threads = 1
+2023-07-10 23:35:24,839 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.port = 5566
+2023-07-10 23:35:24,840 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.flush.interval.ms = 60000
+2023-07-10 23:35:24,840 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    internal.key.converter = org.apache.kafka.connect.json.JsonConverter
+2023-07-10 23:35:24,840 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    include.unknown.datatypes = false
+2023-07-10 23:35:24,840 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    database.hostname = localhost
+2023-07-10 23:35:24,840 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    schema.name.adjustment.mode = avro
+2023-07-10 23:35:24,840 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    offset.storage.replication.factor = 0
+2023-07-10 23:35:24,840 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer)    table.include.list = braindose.orders
+2023-07-10 23:35:24,895 INFO  [io.deb.jdb.JdbcConnection] (pool-8-thread-1) Connection gracefully closed
+2023-07-10 23:35:25,036 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer) Found previous partition offset PostgresPartition [sourcePartition={server=camel-dbz-connector}]: {transaction_id=null, lsn_proc=18037026032, lsn_commit=18037025976, lsn=18037025976, txId=14875, ts_usec=1689021409342062}
+2023-07-10 23:35:25,041 INFO  [io.deb.con.pos.PostgresConnectorTask] (Camel (camel-1) thread #1 - DebeziumConsumer) user 'admin' connected to database 'dbzdemo' on PostgreSQL 14.8 (Debian 14.8-1.pgdg120+1) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit with roles:
+	role 'pg_read_all_settings' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_database_owner' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_stat_scan_tables' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_write_server_files' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'admin' [superuser: true, replication: true, inherit: true, create role: true, create db: true, can log in: true]
+	role 'nfe' [superuser: true, replication: false, inherit: true, create role: false, create db: false, can log in: true]
+	role 'pg_read_all_data' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_write_all_data' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_monitor' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_read_server_files' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_execute_server_program' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_read_all_stats' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_signal_backend' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+
+2023-07-10 23:35:25,044 INFO  [io.deb.con.pos.con.PostgresConnection] (Camel (camel-1) thread #1 - DebeziumConsumer) Obtained valid replication slot ReplicationSlot [active=false, latestFlushedLsn=LSN{4/33172CB8}, catalogXmin=14874]
+2023-07-10 23:35:25,045 INFO  [io.deb.con.pos.PostgresConnectorTask] (Camel (camel-1) thread #1 - DebeziumConsumer) Found previous offset PostgresOffsetContext [sourceInfoSchema=Schema{io.debezium.connector.postgresql.Source:STRUCT}, sourceInfo=source_info[server='camel-dbz-connector'db='dbzdemo', lsn=LSN{4/33172CB8}, txId=14875, lastCommitLsn=LSN{4/33172CB8}, timestamp=2023-07-10T20:36:49.342062Z, snapshot=FALSE, schema=, table=], lastSnapshotRecord=false, lastCompletelyProcessedLsn=LSN{4/33172CF0}, lastCommitLsn=LSN{4/33172CB8}, streamingStoppingLsn=null, transactionContext=TransactionContext [currentTransactionId=null, perTableEventCount={}, totalEventCount=0], incrementalSnapshotContext=IncrementalSnapshotContext [windowOpened=false, chunkEndPosition=null, dataCollectionsToSnapshot=[], lastEventKeySent=null, maximumKey=null]]
+
+2023-07-10 23:35:25,045 INFO  [io.deb.con.pos.sna.InitialSnapshotter] (Camel (camel-1) thread #1 - DebeziumConsumer) Previous snapshot has completed successfully, streaming logical changes from last known position
+2023-07-10 23:35:25,053 INFO  [io.deb.uti.Threads] (Camel (camel-1) thread #1 - DebeziumConsumer) Requested thread factory for connector PostgresConnector, id = camel-dbz-connector named = change-event-source-coordinator
+2023-07-10 23:35:25,055 INFO  [io.deb.uti.Threads] (Camel (camel-1) thread #1 - DebeziumConsumer) Creating thread debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator
+2023-07-10 23:35:25,074 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Metrics registered
+2023-07-10 23:35:25,074 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Context created
+2023-07-10 23:35:25,075 INFO  [io.deb.con.pos.sna.InitialSnapshotter] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Previous snapshot has completed successfully, streaming logical changes from last known position
+2023-07-10 23:35:25,075 INFO  [io.deb.con.pos.PostgresSnapshotChangeEventSource] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) According to the connector configuration no snapshot will be executed
+2023-07-10 23:35:25,076 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Snapshot ended with SnapshotResult [status=SKIPPED, offset=PostgresOffsetContext [sourceInfoSchema=Schema{io.debezium.connector.postgresql.Source:STRUCT}, sourceInfo=source_info[server='camel-dbz-connector'db='dbzdemo', lsn=LSN{4/33172CB8}, txId=14875, lastCommitLsn=LSN{4/33172CB8}, timestamp=2023-07-10T20:36:49.342062Z, snapshot=FALSE, schema=, table=], lastSnapshotRecord=false, lastCompletelyProcessedLsn=LSN{4/33172CF0}, lastCommitLsn=LSN{4/33172CB8}, streamingStoppingLsn=null, transactionContext=TransactionContext [currentTransactionId=null, perTableEventCount={}, totalEventCount=0], incrementalSnapshotContext=IncrementalSnapshotContext [windowOpened=false, chunkEndPosition=null, dataCollectionsToSnapshot=[], lastEventKeySent=null, maximumKey=null]]]
+
+2023-07-10 23:35:25,077 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Connected metrics set to 'true'
+2023-07-10 23:35:25,092 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) REPLICA IDENTITY for 'braindose.orders' is 'DEFAULT'; UPDATE and DELETE events will contain previous values only for PK columns
+2023-07-10 23:35:25,092 WARN  [io.deb.uti.SchemaNameAdjuster] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) The Kafka Connect schema name 'camel-dbz-connector.braindose.orders.Value' is not a valid Avro schema name, so replacing with 'camel_dbz_connector.braindose.orders.Value'
+2023-07-10 23:35:25,093 WARN  [io.deb.uti.SchemaNameAdjuster] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) The Kafka Connect schema name 'camel-dbz-connector.braindose.orders.Key' is not a valid Avro schema name, so replacing with 'camel_dbz_connector.braindose.orders.Key'
+2023-07-10 23:35:25,094 WARN  [io.deb.uti.SchemaNameAdjuster] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) The Kafka Connect schema name 'camel-dbz-connector.braindose.orders.Envelope' is not a valid Avro schema name, so replacing with 'camel_dbz_connector.braindose.orders.Envelope'
+2023-07-10 23:35:25,095 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Starting streaming
+2023-07-10 23:35:25,096 INFO  [io.deb.con.pos.PostgresStreamingChangeEventSource] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Retrieved latest position from stored offset 'LSN{4/33172CF0}'
+2023-07-10 23:35:25,096 INFO  [io.deb.con.pos.con.WalPositionLocator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Looking for WAL restart position for last commit LSN 'LSN{4/33172CB8}' and last change LSN 'LSN{4/33172CF0}'
+2023-07-10 23:35:25,096 INFO  [io.deb.con.pos.con.PostgresReplicationConnection] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Initializing PgOutput logical decoder publication
+2023-07-10 23:35:25,166 INFO  [io.deb.con.pos.con.PostgresConnection] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Obtained valid replication slot ReplicationSlot [active=false, latestFlushedLsn=LSN{4/33172CB8}, catalogXmin=14874]
+2023-07-10 23:35:25,166 INFO  [io.deb.jdb.JdbcConnection] (pool-9-thread-1) Connection gracefully closed
+2023-07-10 23:35:25,186 INFO  [io.deb.uti.Threads] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Requested thread factory for connector PostgresConnector, id = camel-dbz-connector named = keep-alive
+2023-07-10 23:35:25,186 INFO  [io.deb.uti.Threads] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Creating thread debezium-postgresconnector-camel-dbz-connector-keep-alive
+2023-07-10 23:35:25,191 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) REPLICA IDENTITY for 'braindose.orders' is 'DEFAULT'; UPDATE and DELETE events will contain previous values only for PK columns
+2023-07-10 23:35:25,192 INFO  [io.deb.con.pos.PostgresStreamingChangeEventSource] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Searching for WAL resume position
+2023-07-10 23:35:25,193 INFO  [io.deb.con.pos.con.WalPositionLocator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) First LSN 'LSN{4/33172CF0}' received
+2023-07-10 23:35:25,199 INFO  [io.deb.con.pos.con.WalPositionLocator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) LSN after last stored change LSN 'LSN{4/33172F00}' received
+2023-07-10 23:35:25,199 INFO  [io.deb.con.pos.PostgresStreamingChangeEventSource] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) WAL resume position 'LSN{4/33172F00}' discovered
+2023-07-10 23:35:25,200 INFO  [io.deb.jdb.JdbcConnection] (pool-10-thread-1) Connection gracefully closed
+2023-07-10 23:35:25,201 INFO  [io.deb.jdb.JdbcConnection] (pool-11-thread-1) Connection gracefully closed
+2023-07-10 23:35:25,304 INFO  [io.deb.con.pos.con.PostgresReplicationConnection] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Initializing PgOutput logical decoder publication
+2023-07-10 23:35:25,319 INFO  [io.deb.uti.Threads] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Requested thread factory for connector PostgresConnector, id = camel-dbz-connector named = keep-alive
+2023-07-10 23:35:25,319 INFO  [io.deb.uti.Threads] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Creating thread debezium-postgresconnector-camel-dbz-connector-keep-alive
+2023-07-10 23:35:25,319 INFO  [io.deb.con.pos.PostgresStreamingChangeEventSource] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Processing messages
+2023-07-10 23:35:25,320 INFO  [io.deb.con.pos.con.AbstractMessageDecoder] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Streaming requested from LSN LSN{4/33172CF0}, received LSN LSN{4/33172CF0} identified as already processed
+2023-07-10 23:35:25,361 INFO  [io.deb.con.pos.con.AbstractMessageDecoder] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Streaming requested from LSN LSN{4/33172CF0}, received LSN LSN{0/0} identified as already processed
+2023-07-10 23:35:25,366 INFO  [io.deb.con.pos.con.AbstractMessageDecoder] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Streaming requested from LSN LSN{4/33172CF0}, received LSN LSN{4/33172CF0} identified as already processed
+2023-07-10 23:35:25,366 INFO  [io.deb.con.pos.con.WalPositionLocator] (debezium-postgresconnector-camel-dbz-connector-change-event-source-coordinator) Message with LSN 'LSN{4/33172F00}' arrived, switching off the filtering
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2023-07-10 23:36:33,059 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer) 1 records sent during previous 00:01:08.238, last recorded offset: {transaction_id=null, lsn_proc=18037027024, lsn_commit=18037026560, lsn=18037027024, txId=14876, ts_usec=1689042993083606}
+2023-07-10 23:36:33,084 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)
+
+----- ----- ----- ----- ----- ----- -----
+2023-07-10 23:36:33,093 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer) Event received from Debezium : Struct{orderid=2,orderdate=Thu Nov 24 21:00:00 BRT 2022,sku=Apple Magic Keyboard,description=Apple Magic Keyboard for iPad Pro 11.9,amount=300.56}
+2023-07-10 23:36:33,093 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  identificador :: camel-dbz-connector.braindose.orders
+2023-07-10 23:36:33,094 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  operation :: c
+2023-07-10 23:36:33,094 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  sourceDataSnapshotCompleted :: {schema=braindose, sequence=["18037026560","18037027024"], xmin=null, connector=postgresql, lsn=18037027024, name=camel-dbz-connector, txId=14876, version=1.9.6.Final, ts_ms=1689042993083, snapshot=false, db=dbzdemo, table=orders}
+2023-07-10 23:36:33,117 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  base :: dbzdemo
+2023-07-10 23:36:33,117 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  tabela :: orders
+2023-07-10 23:36:33,117 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Message body: Struct{orderid=2,orderdate=Thu Nov 24 21:00:00 BRT 2022,sku=Apple Magic Keyboard,description=Apple Magic Keyboard for iPad Pro 11.9,amount=300.56}
+2023-07-10 23:36:33,141 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## OPERATION :: c
+2023-07-10 23:36:33,142 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Body Map :: {amount=300.56, orderid=2, description=Apple Magic Keyboard for iPad Pro 11.9, orderdate=Thu Nov 24 21:00:00 BRT 2022, sku=Apple Magic Keyboard}
+2023-07-10 23:36:33,157 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Order :: xyz.sandersonsa.model.Order@39ad20cb
+2023-07-10 23:36:33,159 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## orderService :: xyz.sandersonsa.repository.OrderRepository_Subclass@6f0711ca
+2023-07-10 23:36:33,192 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Body :: Struct{orderid=2,orderdate=Thu Nov 24 21:00:00 BRT 2022,sku=Apple Magic Keyboard,description=Apple Magic Keyboard for iPad Pro 11.9,amount=300.56}
+2023-07-10 23:36:33,192 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Schema :: Schema{camel_dbz_connector.braindose.orders.Value:STRUCT}
+2023-07-10 23:36:33,192 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Schema fields :: [Field{name=orderid, index=0, schema=Schema{STRING}}, Field{name=orderdate, index=1, schema=Schema{org.apache.kafka.connect.data.Timestamp:INT64}}, Field{name=sku, index=2, schema=Schema{STRING}}, Field{name=description, index=3, schema=Schema{STRING}}, Field{name=amount, index=4, schema=Schema{FLOAT64}}]
+2023-07-10 23:36:33,192 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Schema fields size :: 5
+2023-07-10 23:36:33,193 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Campo name :: null
+2023-07-10 23:36:33,193 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  # Data :: Thu Nov 24 21:00:00 BRT 2022
+2023-07-10 23:36:44,791 INFO  [io.deb.con.com.BaseSourceTask] (Camel (camel-1) thread #1 - DebeziumConsumer) 1 records sent during previous 00:00:11.732, last recorded offset: {transaction_id=null, lsn_proc=18037029256, lsn_commit=18037029200, lsn=18037029256, txId=14877, ts_usec=1689043004652490}
+2023-07-10 23:36:44,794 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)
+
+----- ----- ----- ----- ----- ----- -----
+2023-07-10 23:36:44,799 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer) Event received from Debezium : Struct{orderid=2,orderdate=Thu Nov 24 21:00:00 BRT 2022,sku=Apple Magic Keyboard - Sanderson,description=Apple Magic Keyboard for iPad Pro 11.9,amount=300.56}
+2023-07-10 23:36:44,803 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  identificador :: camel-dbz-connector.braindose.orders
+2023-07-10 23:36:44,803 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  operation :: u
+2023-07-10 23:36:44,804 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  sourceDataSnapshotCompleted :: {schema=braindose, sequence=["18037029200","18037029256"], xmin=null, connector=postgresql, lsn=18037029256, name=camel-dbz-connector, txId=14877, version=1.9.6.Final, ts_ms=1689043004652, snapshot=false, db=dbzdemo, table=orders}
+2023-07-10 23:36:44,804 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  base :: dbzdemo
+2023-07-10 23:36:44,805 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  tabela :: orders
+2023-07-10 23:36:44,805 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Message body: Struct{orderid=2,orderdate=Thu Nov 24 21:00:00 BRT 2022,sku=Apple Magic Keyboard - Sanderson,description=Apple Magic Keyboard for iPad Pro 11.9,amount=300.56}
+2023-07-10 23:36:44,806 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## OPERATION :: u
+2023-07-10 23:36:44,806 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Body Map :: {amount=300.56, orderid=2, description=Apple Magic Keyboard for iPad Pro 11.9, orderdate=Thu Nov 24 21:00:00 BRT 2022, sku=Apple Magic Keyboard - Sanderson}
+2023-07-10 23:36:44,807 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Order :: xyz.sandersonsa.model.Order@3f1b667
+2023-07-10 23:36:44,807 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## orderService :: xyz.sandersonsa.repository.OrderRepository_Subclass@6f0711ca
+2023-07-10 23:36:44,808 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Body :: Struct{orderid=2,orderdate=Thu Nov 24 21:00:00 BRT 2022,sku=Apple Magic Keyboard - Sanderson,description=Apple Magic Keyboard for iPad Pro 11.9,amount=300.56}
+2023-07-10 23:36:44,808 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Schema :: Schema{camel_dbz_connector.braindose.orders.Value:STRUCT}
+2023-07-10 23:36:44,808 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Schema fields :: [Field{name=orderid, index=0, schema=Schema{STRING}}, Field{name=orderdate, index=1, schema=Schema{org.apache.kafka.connect.data.Timestamp:INT64}}, Field{name=sku, index=2, schema=Schema{STRING}}, Field{name=description, index=3, schema=Schema{STRING}}, Field{name=amount, index=4, schema=Schema{FLOAT64}}]
+2023-07-10 23:36:44,808 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Schema fields size :: 5
+2023-07-10 23:36:44,808 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Campo name :: null
+2023-07-10 23:36:44,809 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  # Data :: Thu Nov 24 21:00:00 BRT 2022
+2023-07-10 23:36:44,819 WARN  [org.hib.eng.jdb.spi.SqlExceptionHelper] (Camel (camel-1) thread #1 - DebeziumConsumer) SQL Error: 0, SQLState: 23505
+2023-07-10 23:36:44,819 ERROR [org.hib.eng.jdb.spi.SqlExceptionHelper] (Camel (camel-1) thread #1 - DebeziumConsumer) ERROR: duplicate key value violates unique constraint "orders_pkey"
+  Detail: Key (orderid)=(2) already exists.
+2023-07-10 23:36:44,821 INFO  [org.hib.eng.jdb.bat.int.AbstractBatchImpl] (Camel (camel-1) thread #1 - DebeziumConsumer) HHH000010: On release of batch it still contained JDBC statements
+2023-07-10 23:36:44,829 WARN  [com.arj.ats.arjuna] (Camel (camel-1) thread #1 - DebeziumConsumer) ARJUNA012125: TwoPhaseCoordinator.beforeCompletion - failed for SynchronizationImple< 0:ffffc0a80109:cf8f:64acc031:7, org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization@5325d408 >: javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1411)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3303)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2438)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:356)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:76)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:360)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:91)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:162)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1295)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:128)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager.commit(CDIDelegatingTransactionManager.java:105)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager_Subclass.commit$$superforward1(Unknown Source)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager_Subclass$$function$$6.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:54)
+	at io.quarkus.arc.runtime.devconsole.InvocationInterceptor.proceed(InvocationInterceptor.java:62)
+	at io.quarkus.arc.runtime.devconsole.InvocationInterceptor.monitor(InvocationInterceptor.java:51)
+	at io.quarkus.arc.runtime.devconsole.InvocationInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:41)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:33)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager_Subclass.commit(Unknown Source)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:374)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:170)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:104)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:58)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:41)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:33)
+	at xyz.sandersonsa.processor.OrderProcessor_Subclass.process(Unknown Source)
+	at xyz.sandersonsa.processor.OrderProcessor_ClientProxy.process(Unknown Source)
+	at org.apache.camel.support.processor.DelegateSyncProcessor.process(DelegateSyncProcessor.java:65)
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$SimpleTask.run(RedeliveryErrorHandler.java:477)
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:189)
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:61)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:182)
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:399)
+	at org.apache.camel.impl.engine.DefaultAsyncProcessorAwaitManager.process(DefaultAsyncProcessorAwaitManager.java:83)
+	at org.apache.camel.support.AsyncProcessorSupport.process(AsyncProcessorSupport.java:41)
+	at org.apache.camel.component.debezium.DebeziumConsumer.onEventListener(DebeziumConsumer.java:83)
+	at io.debezium.embedded.ConvertingEngineBuilder.lambda$notifying$0(ConvertingEngineBuilder.java:72)
+	at io.debezium.embedded.EmbeddedEngine$1.handleBatch(EmbeddedEngine.java:473)
+	at io.debezium.embedded.EmbeddedEngine.run(EmbeddedEngine.java:822)
+	at io.debezium.embedded.ConvertingEngineBuilder$2.run(ConvertingEngineBuilder.java:192)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:109)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3375)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3937)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEaner(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)
+	... 54 more
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "orders_pkey"
+  Detail: Key (orderid)=(2) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:88)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	... 66 more
+
+
+2023-07-10 23:36:44,837 ERROR [org.apa.cam.pro.err.DefaultErrorHandler] (Camel (camel-1) thread #1 - DebeziumConsumer) Failed delivery for (MessageId: 9B5943754B72582-0000000000000001 on ExchangeId: 9B5943754B72582-0000000000000001). Exhausted after delivery attempt: 1 caught: javax.transaction.RollbackException: ARJUNA016053: Could not commit transaction.
+
+Message History (source location and message history is disabled)
+---------------------------------------------------------------------------------------------------------------------------------------
+Source                                   ID                             Processor                                          Elapsed (ms)
+                                         route1/route1                  from[debezium-postgres://dbz-camel?databaseDbname=           44
+	...
+                                         route1/process1                ref:orderProcessor                                            0
+
+Stacktrace
+---------------------------------------------------------------------------------------------------------------------------------------: javax.transaction.RollbackException: ARJUNA016053: Could not commit transaction.
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1307)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:128)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager.commit(CDIDelegatingTransactionManager.java:105)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager_Subclass.commit$$superforward1(Unknown Source)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager_Subclass$$function$$6.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:54)
+	at io.quarkus.arc.runtime.devconsole.InvocationInterceptor.proceed(InvocationInterceptor.java:62)
+	at io.quarkus.arc.runtime.devconsole.InvocationInterceptor.monitor(InvocationInterceptor.java:51)
+	at io.quarkus.arc.runtime.devconsole.InvocationInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:41)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:33)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager_Subclass.commit(Unknown Source)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:374)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:170)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:104)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:58)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:41)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:33)
+	at xyz.sandersonsa.processor.OrderProcessor_Subclass.process(Unknown Source)
+	at xyz.sandersonsa.processor.OrderProcessor_ClientProxy.process(Unknown Source)
+	at org.apache.camel.support.processor.DelegateSyncProcessor.process(DelegateSyncProcessor.java:65)
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$SimpleTask.run(RedeliveryErrorHandler.java:477)
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:189)
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:61)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:182)
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:399)
+	at org.apache.camel.impl.engine.DefaultAsyncProcessorAwaitManager.process(DefaultAsyncProcessorAwaitManager.java:83)
+	at org.apache.camel.support.AsyncProcessorSupport.process(AsyncProcessorSupport.java:41)
+	at org.apache.camel.component.debezium.DebeziumConsumer.onEventListener(DebeziumConsumer.java:83)
+	at io.debezium.embedded.ConvertingEngineBuilder.lambda$notifying$0(ConvertingEngineBuilder.java:72)
+	at io.debezium.embedded.EmbeddedEngine$1.handleBatch(EmbeddedEngine.java:473)
+	at io.debezium.embedded.EmbeddedEngine.run(EmbeddedEngine.java:822)
+	at io.debezium.embedded.ConvertingEngineBuilder$2.run(ConvertingEngineBuilder.java:192)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1411)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3303)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2438)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:356)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:76)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:360)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:91)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:162)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1295)
+	... 42 more
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:109)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetRpl.java:200)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3375)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3937)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)
+	... 54 more
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "orders_pkey"
+  Detail: Key (orderid)=(2) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:88)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	... 66 more
+
+
+2023-07-10 23:36:44,841 WARN  [org.apa.cam.com.deb.DebeziumConsumer] (Camel (camel-1) thread #1 - DebeziumConsumer) Error processing exchange. Exchange[9B5943754B72582-0000000000000001]. Caused by: [javax.transaction.RollbackException - ARJUNA016053: Could not commit transaction.]: javax.transaction.RollbackException: ARJUNA016053: Could not commit transaction.
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1307)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:128)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager.commit(CDIDelegatingTransactionManager.java:105)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager_Subclass.commit$$superforward1(Unknown Source)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager_Subclass$$function$$6.apply(Unknown Source)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.proceed(AroundInvokeInvocationContext.java:54)
+	at io.quarkus.arc.runtime.devconsole.InvocationInterceptor.proceed(InvocationInterceptor.java:62)
+	at io.quarkus.arc.runtime.devconsole.InvocationInterceptor.monitor(InvocationInterceptor.java:51)
+	at io.quarkus.arc.runtime.devconsole.InvocationInterceptor_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:41)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:33)
+	at io.quarkus.narayana.jta.runtime.CDIDelegatingTransactionManager_Subclass.commit(Unknown Source)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.endTransaction(TransactionalInterceptorBase.java:374)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:170)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.invokeInOurTx(TransactionalInterceptorBase.java:104)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.doIntercept(TransactionalInterceptorRequired.java:38)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorBase.intercept(TransactionalInterceptorBase.java:58)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired.intercept(TransactionalInterceptorRequired.java:32)
+	at io.quarkus.narayana.jta.runtime.interceptor.TransactionalInterceptorRequired_Bean.intercept(Unknown Source)
+	at io.quarkus.arc.impl.InterceptorInvocation.invoke(InterceptorInvocation.java:42)
+	at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:41)
+	at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:33)
+	at xyz.sandersonsa.processor.OrderProcessor_Subclass.process(Unknown Source)
+	at xyz.sandersonsa.processor.OrderProcessor_ClientProxy.process(Unknown Source)
+	at org.apache.camel.support.processor.DelegateSyncProcessor.process(DelegateSyncProcessor.java:65)
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$SimpleTask.run(RedeliveryErrorHandler.java:477)
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:189)
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:61)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:182)
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:399)
+	at org.apache.camel.impl.engine.DefaultAsyncProcessorAwaitManager.process(DefaultAsyncProcessorAwaitManager.java:83)
+	at org.apache.camel.support.AsyncProcessorSupport.process(AsyncProcessorSupport.java:41)
+	at org.apache.camel.component.debezium.DebeziumConsumer.onEventListener(DebeziumConsumer.java:83)
+	at io.debezium.embedded.ConvertingEngineBuilder.lambda$notifying$0(ConvertingEngineBuilder.java:72)
+	at io.debezium.embedded.EmbeddedEngine$1.handleBatch(EmbeddedEngine.java:473)
+	at io.debezium.embedded.EmbeddedEngine.run(EmbeddedEngine.java:822)
+	at io.debezium.embedded.ConvertingEngineBuilder$2.run(ConvertingEngineBuilder.java:192)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: javax.persistence.PersistenceException: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:154)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1411)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3303)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2438)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaTransactionCoordinatorImpl.beforeCompletion(JtaTransactionCoordinatorImpl.java:356)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.SynchronizationCallbackCoordinatorNonTrackingImpl.beforeCompletion(SynchronizationCallbackCoordinatorNonTrackingImpl.java:47)
+	at org.hibernate.resource.transaction.backend.jta.internal.synchronization.RegisteredSynchronization.beforeCompletion(RegisteredSynchronization.java:37)
+	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.beforeCompletion(SynchronizationImple.java:76)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.beforeCompletion(TwoPhaseCoordinator.java:360)
+	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:91)
+	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:162)
+	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1295)
+	... 42 more
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:109)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3375)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3937)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+  t org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)
+	... 54 more
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "orders_pkey"
+  Detail: Key (orderid)=(2) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at io.agroal.pool.wrapper.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:88)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	... 66 more
+
+
+2023-07-10 23:37:21,594 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)
+
+----- ----- ----- ----- ----- ----- -----
+2023-07-10 23:37:21,596 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer) Event received from Debezium :
+2023-07-10 23:37:21,597 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  identificador :: camel-dbz-connector.braindose.orders
+2023-07-10 23:37:21,597 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  operation :: d
+2023-07-10 23:37:21,606 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  sourceDataSnapshotCompleted :: {schema=braindose, sequence=["18037029472","18037029528"], xmin=null, connector=postgresql, lsn=18037029528, name=camel-dbz-connector, txId=14878, version=1.9.6.Final, ts_ms=1689043041582, snapshot=false, db=dbzdemo, table=orders}
+2023-07-10 23:37:21,607 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  base :: dbzdemo
+2023-07-10 23:37:21,607 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  tabela :: orders
+2023-07-10 23:37:21,607 INFO  [route1] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Message body:
+2023-07-10 23:37:21,608 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## OPERATION :: d
+2023-07-10 23:37:21,609 INFO  [xyz.san.pro.OrderProcessor] (Camel (camel-1) thread #1 - DebeziumConsumer)  ## Body is null
+
+--
+Tests paused
+Press [r] to resume testing, [o] Toggle test output, [:] for the terminal, [h] for more options>

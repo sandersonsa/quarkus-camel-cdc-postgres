@@ -1,0 +1,404 @@
+package xyz.sandersonsa.processor;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.transaction.Transactional;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Message;
+import org.apache.camel.Processor;
+import org.apache.camel.component.debezium.DebeziumConstants;
+import org.apache.kafka.connect.data.Schema;
+import org.apache.kafka.connect.data.Struct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import xyz.sandersonsa.model.Order;
+import xyz.sandersonsa.repository.OrderRepository;
+
+@ApplicationScoped
+@Named
+public class OrderProcessor implements Processor {
+
+    private static Logger log = LoggerFactory.getLogger(OrderProcessor.class);
+
+    @Inject
+    OrderRepository orderRepository;
+
+    private final String OPERATION_INSERT = "c";
+    private final String OPERATION_UPDATE = "u";
+    private final String OPERATION_DELETE = "d";
+
+    @Transactional
+    public void process(Exchange exchange) throws Exception {        
+
+        Message in = exchange.getIn();
+        
+        String operation = in.getHeader(DebeziumConstants.HEADER_OPERATION, String.class);
+        log.info(" ## OPERATION :: {}", operation);
+        
+        final Struct body = in.getBody(Struct.class);
+
+        if(OPERATION_INSERT.equals(operation)) {
+            log.info(" ## OPERATION INSERT :: {}", operation);
+        }
+
+        if(OPERATION_UPDATE.equals(operation)) {
+            log.info(" ## OPERATION_UPDATE :: {}", operation);
+        }
+
+        if(OPERATION_DELETE.equals(operation)) {
+            log.info(" ## OPERATION_DELETE :: {}", operation);
+        }
+
+        //Senão for delete
+        if(!OPERATION_DELETE.equals(operation)) {
+            
+        }else {
+            // log.info(" ## OPERATION DELETE :: {}", operation);
+            // String orderId = body.getString("orderid");
+            // log.info(" ## orderId :: {}", orderId);
+            // orderRepository.delete(null, orderId);
+            // return;
+        }
+        // Map -- Null quando o evento é delete
+        Map bodyMap = exchange.getIn().getBody(Map.class);
+        if (Objects.nonNull(bodyMap)) {
+            log.info(" ## Body Map :: {}", bodyMap);
+            // log.info(" ## orderdate :: {}", bodyMap.get("orderdate"));
+
+            double amount = Double.parseDouble(bodyMap.get("amount").toString());
+            Order order = new Order(
+                    bodyMap.get("orderid").toString(),
+                    convertToDate(bodyMap.get("orderdate").toString()), // Fri Nov 25 21:00:00 BRT 2022
+                    bodyMap.get("sku").toString(),
+                    bodyMap.get("description").toString(),
+                    amount);
+
+            log.info(" ## Order :: {}", order);
+            log.info(" ## orderService :: {}", orderRepository);
+            orderRepository.persist(order);
+        }
+
+        if (body == null) {
+            log.info(" ## Body is null");
+            return;
+        }
+        Schema schema = body.schema();
+        log.info(" ## Body :: {}", body);
+        log.info(" ## Schema :: {}", schema);
+        log.info(" ## Schema fields :: {}", schema.fields());
+        log.info(" ## Schema fields size :: {}", schema.fields().size());
+        log.info(" ## Campo name :: {}", schema.field("name"));
+        log.info(" # Data :: {}", body.get("orderdate"));
+
+    }
+
+    private LocalDateTime convertToLocalDateTime(String date) {
+        // Fri Nov 25 21:00:00 BRT 2022
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy", Locale.US);
+        // String date = "Tuesday, Aug 16, 2016 12:10:56 PM";
+        LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
+        System.out.println(localDateTime);
+        System.out.println(formatter.format(localDateTime));
+        return localDateTime;
+    }
+
+    private Date convertToDate(String str) {
+        SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
+        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd
+        // HH:mm:ss zzz yyyy", Locale.US);
+        try {
+            return formatter.parse(str);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+}
+
+
+
+package xyz.sandersonsa.model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "orders", schema = "braindose")
+public class Order {
+
+    @Id
+    public String orderid;
+    
+    private Date orderdate;
+    private String sku;
+    private String description;
+    private double amount;
+
+    
+
+    public String getOrderid() {
+        return orderid;
+    }
+
+    public void setOrderid(String orderid) {
+        this.orderid = orderid;
+    }
+
+    public Date getOrderdate() {
+        return orderdate;
+    }
+
+    public void setOrderdate(Date orderdate) {
+        this.orderdate = orderdate;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public Order() {
+    }
+
+    public Order(String orderid, Date orderdate, String sku, String description, double amount) {
+        this.orderid = orderid;
+        this.orderdate = orderdate;
+        this.sku = sku;
+        this.description = description;
+        this.amount = amount;
+    }    
+}
+
+package xyz.sandersonsa.model;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class CustomerOrder {
+    
+    private int custId;
+    private String orderId;
+    private String custName;
+    private Date orderdate; 
+    private String sku;
+
+    private DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss'Z'");
+
+    public CustomerOrder(){}
+
+    public CustomerOrder(int custId, String orderId, String orderDate, String sku, String description, double amount){
+        this.custId = custId;
+        this.orderId = orderId;
+        try{
+            this.orderdate = df.parse(orderDate);
+        }
+        catch(ParseException e){
+            e.printStackTrace();
+        }
+        this.sku = sku;
+        this.description = description;
+        this.amount = amount;
+    }
+
+    public CustomerOrder(String orderId, String orderDate, String sku, String description, double amount){
+        this.orderId = orderId;
+        try{
+            this.orderdate = df.parse(orderDate);
+        }
+        catch(ParseException e){
+            e.printStackTrace();
+        }
+        this.sku = sku;
+        this.description = description;
+        this.amount = amount;
+    }
+
+    public String getCustName() {
+        return custName;
+    }
+
+    public void setCustName(String custName) {
+        this.custName = custName;
+    }
+
+    public Date getOrderdate() {
+        return orderdate;
+    }
+
+    public void setOrderdate(Date orderdate) {
+        this.orderdate = orderdate;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+    private String description; 
+    private double amount;
+
+    
+
+    public int getCustId() {
+        return custId;
+    }
+    public void setCustId(int custId) {
+        this.custId = custId;
+    }
+    public String getOrderId() {
+        return orderId;
+    }
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    @Override
+    public String toString() {
+        return "Order [orderId=" + orderId + ", custId=" + custId + ", custName=" + custName + ", orderdate=" + orderdate + ", sku=" + sku + "]";
+    }
+
+}
+
+package xyz.sandersonsa.repository;
+
+import javax.enterprise.context.ApplicationScoped;
+
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import xyz.sandersonsa.model.Order;
+
+@ApplicationScoped
+public class OrderRepository implements PanacheRepository<Order> {
+    
+}
+
+package xyz.sandersonsa.service;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
+
+import xyz.sandersonsa.model.Order;
+
+@ApplicationScoped
+public class OrderService {
+
+    // Transaction method
+    @Transactional
+    public Order inserOrder(Order orders) {
+        // Persists data
+        // orders.persist();        
+        return orders;
+    }
+}
+
+    // @PersistenceContext
+    // EntityManager em;
+
+    // @Transactional
+    // public void salvar(Object obj) {
+    //     em.persist(obj);
+    // }
+
+
+// @ApplicationScoped
+// public class SantaClausService {
+//     @Inject
+//     EntityManager em; 
+
+//     @Transactional 
+//     public void createGift(String giftDescription) {
+//         Gift gift = new Gift();
+//         gift.setName(giftDescription);
+//         em.persist(gift);
+//     }
+// }
+
+
+// @Entity
+// public class Gift {
+//     private Long id;
+//     private String name;
+
+//     @Id
+//     @SequenceGenerator(name = "giftSeq", sequenceName = "gift_id_seq", allocationSize = 1, initialValue = 1)
+//     @GeneratedValue(generator = "giftSeq")
+//     public Long getId() {
+//         return id;
+//     }
+
+//     public void setId(Long id) {
+//         this.id = id;
+//     }
+
+//     public String getName() {
+//         return name;
+//     }
+
+//     public void setName(String name) {
+//         this.name = name;
+//     }
+// }
+
+// # datasource configuration
+// quarkus.datasource.db-kind = postgresql
+// quarkus.datasource.username = hibernate
+// quarkus.datasource.password = hibernate
+// quarkus.datasource.jdbc.url = jdbc:postgresql://localhost:5432/hibernate_db
+
+// # drop and create the database at startup (use `update` to only update the schema)
+// quarkus.hibernate-orm.database.generation=drop-and-create
