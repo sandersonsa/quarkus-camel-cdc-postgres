@@ -16,6 +16,7 @@ public class PostgresCDCRoute extends RouteBuilder {
                      "&schemaIncludeList={{app.cdc.dbz.schemaincludelist}}" +
                      "&tableIncludeList={{app.cdc.dbz.tableincludelist}}" +
                      "&timePrecisionMode=connect" +
+                     // "&snapshotMode=never" +
                      "&pluginName=pgoutput";
 
        @Override
