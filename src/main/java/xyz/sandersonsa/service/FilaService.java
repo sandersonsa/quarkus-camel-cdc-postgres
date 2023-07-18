@@ -65,9 +65,11 @@ public class FilaService {
     }
 
     private Fila preencher(Fila objeto, Map bodyMap){
-        objeto.setCode(bodyMap.get("code").toString());
+        if(Objects.nonNull(bodyMap.get("code")))
+            objeto.setCode(bodyMap.get("code").toString());
         //date
-        objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));
+        if(Objects.nonNull(bodyMap.get("created_at")))
+            objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));
         if(Objects.nonNull(bodyMap.get("updated_at")))
             objeto.setUpdatedAt(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
         
