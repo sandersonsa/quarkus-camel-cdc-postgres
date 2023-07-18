@@ -15,6 +15,10 @@ public class PostgresCDCRoute extends RouteBuilder {
                      "&databaseHistoryFileFilename={{app.cdc.dbz.dbhistoryfile}}" +
                      "&schemaIncludeList={{app.cdc.dbz.schemaincludelist}}" +
                      "&tableIncludeList={{app.cdc.dbz.tableincludelist}}" +
+                     "&tombstonesOnDelete=true" +
+                     // + "&schemaWhitelist={{database.schema}}"
+                     // + "&tableWhitelist={{database.schema}}.table"
+                     // + "&tableWhitelist={{database.schema}}.table1,{{database.schema}}.table2"
                      "&timePrecisionMode=connect" +
                      // "&snapshotMode=never" +
                      "&pluginName=pgoutput";
@@ -27,6 +31,23 @@ public class PostgresCDCRoute extends RouteBuilder {
                      .log(" ## Event received from Debezium : ${body}")
                      .log(" ## Source DataSnapshot Completed :: ${headers.CamelDebeziumSourceMetadata}")                     
                      .setHeader("table", simple("${headers.CamelDebeziumSourceMetadata[db]}.${headers.CamelDebeziumSourceMetadata[table]}"))
+                     // .setHeader("eventPayload", simple("${body}"))
+                     
+                     // c= create, u= update, d= delete, r= snapshot
+                     // .log(" operation :: ${headers.CamelDebeziumOperation}")
+                     // .log("Event received from Debezium : ${body}")
+                     // .log(" identificador :: ${headers.CamelDebeziumIdentifier}")                     
+                     // .log(" timestamp :: ${headers.CamelDebeziumTimestamp}")
+                     // .log(" transactionId :: ${headers.CamelDebeziumTransactionId}")
+                     // .log(" sourceDataCollection :: ${headers.CamelDebeziumSourceDataCollection}")
+                     // .log(" sourceDataSchema :: ${headers.CamelDebeziumSourceDataSchema}")
+                     // .log(" sourceDataVersion :: ${headers.CamelDebeziumSourceDataVersion}")
+                     // .log(" sourceDataPartition :: ${headers.CamelDebeziumSourceDataPartition}")
+                     // .log(" sourceDataOffset :: ${headers.CamelDebeziumSourceDataOffset}")
+                     // .log(" sourceDataSnapshot :: ${headers.CamelDebeziumSourceDataSnapshot}")
+                     // .log(" sourceDataSnapshotCompleted :: ${headers.CamelDebeziumSourceMetadata}")
+                     // .log(" Chave primaria :: ${headers.CamelDebeziumKey}")
+                     // .log(" Before :: ${headers.CamelDebeziumBefore}")
                      .process("cdcProcessor")
               ;
        }

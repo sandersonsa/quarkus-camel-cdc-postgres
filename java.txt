@@ -497,3 +497,38 @@ public class OrderProcessor implements Processor {
     }
 
 }
+
+
+
+//https://medium.com/@manollo.guedes11/rest-api-using-quarkus-and-panache-79091228c187
+
+public Optional<Product> update(Product product) {
+    final var id = product.getId();
+    var savedOpt = this.findByIdOptional(id);
+    if (savedOpt.isEmpty()) {
+        return Optional.empty();
+    }
+
+    var saved = savedOpt.get();
+    saved.setName(product.getName());
+    saved.setPrice(product.getPrice());
+    saved.setBrandName(product.getBrandName());
+
+    return Optional.of(saved);
+}
+
+@Converter
+public static class Converters {
+
+  @Converter
+  public static Question questionFromStruct(Struct struct) {                   
+    return new Question(struct.getInt64("id"), struct.getString("text"),
+        struct.getString("email"));
+  }
+
+  @Converter
+  public static Answer answerFromStruct(Struct struct) {                       
+    return new Answer(struct.getInt64("id"), struct.getString("text"),
+        struct.getString("email"), struct.getInt64("question_id"));
+  }
+}

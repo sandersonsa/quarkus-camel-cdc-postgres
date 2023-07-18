@@ -13,8 +13,9 @@ import javax.persistence.Table;
 @Table(name = "candidatos", schema = "popular")
 public class Candidato {
 
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer id;
+    @Id
+    // @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "cpf")
     private String cpf;
@@ -126,10 +127,10 @@ public class Candidato {
         this.dataEmissaoDoc = dataEmissaoDoc;
         this.cpfNovo = cpfNovo;
     }
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getCpf() {
