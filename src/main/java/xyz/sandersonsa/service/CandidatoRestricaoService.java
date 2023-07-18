@@ -1,6 +1,8 @@
 package xyz.sandersonsa.service;
 
 import java.util.Map;
+import java.util.Objects;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -63,8 +65,10 @@ public class CandidatoRestricaoService {
     }
 
     private CandidatoRestricao preencher(Map bodyMap, CandidatoRestricao objeto) {        
-        objeto.setIdCandidatoComissao(Integer.parseInt(bodyMap.get("candidato_comissao_id").toString()));
-        objeto.setRestricao(bodyMap.get("restricao").toString());
+        if(Objects.nonNull(bodyMap.get("candidato_comissao_id")))
+            objeto.setIdCandidatoComissao(Integer.parseInt(bodyMap.get("candidato_comissao_id").toString()));
+        if(Objects.nonNull(bodyMap.get("restricao")))
+            objeto.setRestricao(bodyMap.get("restricao").toString());
         return objeto;
     }
 

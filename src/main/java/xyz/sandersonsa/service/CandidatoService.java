@@ -73,28 +73,45 @@ public class CandidatoService {
         candidato.setSexo(bodyMap.get("sexo").toString());
         candidato.setCep(bodyMap.get("cep").toString());
         candidato.setLogradouro(bodyMap.get("logradouro").toString());
-        candidato.setNumero(bodyMap.get("numero").toString());
-        candidato.setBairro(bodyMap.get("bairro").toString());
+        if(Objects.nonNull(bodyMap.get("numero")))
+            candidato.setNumero(bodyMap.get("numero").toString());
+        if(Objects.nonNull(bodyMap.get("bairro")))
+            candidato.setBairro(bodyMap.get("bairro").toString());
         if(Objects.nonNull(bodyMap.get("complemento")))
             candidato.setComplemento(bodyMap.get("complemento").toString());
         candidato.setUfEndereco(bodyMap.get("uf_endereco").toString());
-        candidato.setDddResidencial(bodyMap.get("ddd_residencial").toString());
-        candidato.setTelefoneResidencial(bodyMap.get("telefone_residencial").toString());
-        candidato.setDddCelular(bodyMap.get("ddd_celular").toString());
-        candidato.setTelefoneCelular(bodyMap.get("telefone_celular").toString());
-        candidato.setNumDocumento(bodyMap.get("num_documento").toString());
-        candidato.setOrgaoExpedidor(bodyMap.get("orgao_expedidor").toString());
-        candidato.setEstadoCivil(Integer.parseInt(bodyMap.get("estado_civil").toString()));
-        candidato.setIdMunicipioEndereco(Integer.parseInt(bodyMap.get("fk_municipio_endereco").toString()));
-        candidato.setGrauInstrucao(Integer.parseInt(bodyMap.get("grau_instrucao").toString()));
-        candidato.setProfissao(Integer.parseInt(bodyMap.get("profissao").toString()));
-        candidato.setEmail(bodyMap.get("email").toString());
+        if(Objects.nonNull(bodyMap.get("ddd_residencial")))
+            candidato.setDddResidencial(bodyMap.get("ddd_residencial").toString());
+        if(Objects.nonNull(bodyMap.get("telefone_residencial")))
+            candidato.setTelefoneResidencial(bodyMap.get("telefone_residencial").toString());
+        if(Objects.nonNull(bodyMap.get("ddd_celular")))
+            candidato.setDddCelular(bodyMap.get("ddd_celular").toString());
+        if(Objects.nonNull(bodyMap.get("telefone_celular")))
+            candidato.setTelefoneCelular(bodyMap.get("telefone_celular").toString());
+        if(Objects.nonNull(bodyMap.get("num_documento")))
+            candidato.setNumDocumento(bodyMap.get("num_documento").toString());
+        if(Objects.nonNull(bodyMap.get("orgao_expedidor")))
+            candidato.setOrgaoExpedidor(bodyMap.get("orgao_expedidor").toString());
+        if(Objects.nonNull(bodyMap.get("estado_civil")))
+            candidato.setEstadoCivil(Integer.parseInt(bodyMap.get("estado_civil").toString()));
+        if(Objects.nonNull(bodyMap.get("fk_municipio_endereco")))
+            candidato.setIdMunicipioEndereco(Integer.parseInt(bodyMap.get("fk_municipio_endereco").toString()));
+        if(Objects.nonNull(bodyMap.get("grau_instrucao")))
+            candidato.setGrauInstrucao(Integer.parseInt(bodyMap.get("grau_instrucao").toString()));
+        if(Objects.nonNull(bodyMap.get("profissao")))
+            candidato.setProfissao(Integer.parseInt(bodyMap.get("profissao").toString()));
+        if(Objects.nonNull(bodyMap.get("email")))
+            candidato.setEmail(bodyMap.get("email").toString());
         candidato.setIdMunicipioNascimento(Integer.parseInt(bodyMap.get("fk_municipio_nascimento").toString()));
         candidato.setUfNascimento(bodyMap.get("uf_nascimento").toString());
-        candidato.setDataCriacao(utilsService.convertToDate(bodyMap.get("created_at").toString()));
-        candidato.setDataAtualizacao(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
-        candidato.setUfOrgaoExpedidor(bodyMap.get("uf_orgao_expedidor").toString());
-        candidato.setDataEmissaoDoc(utilsService.convertToDate(bodyMap.get("data_emissao_doc").toString()));
+        if(Objects.nonNull(bodyMap.get("created_at")))
+            candidato.setDataCriacao(utilsService.convertToDate(bodyMap.get("created_at").toString()));
+        if(Objects.nonNull(bodyMap.get("updated_at")))
+            candidato.setDataAtualizacao(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
+        if(Objects.nonNull(bodyMap.get("uf_orgao_expedidor")))
+            candidato.setUfOrgaoExpedidor(bodyMap.get("uf_orgao_expedidor").toString());
+        if(Objects.nonNull(bodyMap.get("data_emissao_doc")))
+            candidato.setDataEmissaoDoc(utilsService.convertToDate(bodyMap.get("data_emissao_doc").toString()));
         candidato.setCpfNovo(bodyMap.get("cpf_novo").toString());
         return candidato;
     }

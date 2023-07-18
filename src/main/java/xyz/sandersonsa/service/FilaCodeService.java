@@ -71,12 +71,14 @@ public class FilaCodeService {
         //date
         if(Objects.nonNull(bodyMap.get("expiration_code")))
             objeto.setExpirationCode(utilsService.convertToDate(bodyMap.get("expiration_code").toString()));
-        objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));
+        if(Objects.nonNull(bodyMap.get("created_at")))
+            objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));
         if(Objects.nonNull(bodyMap.get("updated_at")))
             objeto.setUpdatedAt(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
-        
-        objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));
-        objeto.setSourceIp(bodyMap.get("source_ip").toString());
+        if(Objects.nonNull(bodyMap.get("ativo")))
+            objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));
+        if(Objects.nonNull(bodyMap.get("source_ip")))
+            objeto.setSourceIp(bodyMap.get("source_ip").toString());
         if(Objects.nonNull(bodyMap.get("user_agent")))
             objeto.setUserAgent(bodyMap.get("user_agent").toString());
         return objeto;

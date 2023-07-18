@@ -70,11 +70,14 @@ public class CandidatoComissaoService {
         objeto.setDataCriacao(utilsService.convertToDate(bodyMap.get("created_at").toString()));
         if(Objects.nonNull(bodyMap.get("updated_at")))
             objeto.setDataAtualizacao(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
-        objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));
-        objeto.setIdMotivoValidacao(Integer.parseInt(bodyMap.get("fk_motivo_validacao").toString()));
+        if(Objects.nonNull(bodyMap.get("ativo")))
+            objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));
+        if(Objects.nonNull(bodyMap.get("fk_motivo_validacao")))
+            objeto.setIdMotivoValidacao(Integer.parseInt(bodyMap.get("fk_motivo_validacao").toString()));
         if(Objects.nonNull(bodyMap.get("fk_capacete")))
             objeto.setIdCapacete(Integer.parseInt(bodyMap.get("fk_capacete").toString()));
-        objeto.setCategoria(bodyMap.get("categoria").toString());
+        if(Objects.nonNull(bodyMap.get("categoria")))
+            objeto.setCategoria(bodyMap.get("categoria").toString());
         return objeto;
     }
 

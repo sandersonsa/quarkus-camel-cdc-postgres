@@ -72,7 +72,7 @@ public class DocumentoAnexoService {
             objeto.setDeletedAt(utilsService.convertToDate(bodyMap.get("deleted_at").toString()));
         if(Objects.nonNull(bodyMap.get("updated_at")))
             objeto.setUpdatedAt(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
-        
+        if(Objects.nonNull(bodyMap.get("ativo")))        
             objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));        
         if(Objects.nonNull(bodyMap.get("hash_storage")))
             objeto.setHashStorage(bodyMap.get("hash_storage").toString());

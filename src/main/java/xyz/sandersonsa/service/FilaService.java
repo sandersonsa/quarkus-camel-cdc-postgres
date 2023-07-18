@@ -72,7 +72,8 @@ public class FilaService {
             objeto.setUpdatedAt(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
         
         objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));
-        objeto.setAccessToken(bodyMap.get("access_token").toString());        
+        if(Objects.nonNull(bodyMap.get("access_token")))
+            objeto.setAccessToken(bodyMap.get("access_token").toString());        
         return objeto;
     }
 
