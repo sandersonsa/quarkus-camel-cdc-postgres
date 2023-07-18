@@ -102,8 +102,10 @@ public class CandidatoService {
             candidato.setProfissao(Integer.parseInt(bodyMap.get("profissao").toString()));
         if(Objects.nonNull(bodyMap.get("email")))
             candidato.setEmail(bodyMap.get("email").toString());
-        candidato.setIdMunicipioNascimento(Integer.parseInt(bodyMap.get("fk_municipio_nascimento").toString()));
-        candidato.setUfNascimento(bodyMap.get("uf_nascimento").toString());
+        if(Objects.nonNull(bodyMap.get("fk_municipio_nascimento")))
+            candidato.setIdMunicipioNascimento(Integer.parseInt(bodyMap.get("fk_municipio_nascimento").toString()));
+        if(Objects.nonNull(bodyMap.get("uf_nascimento")))
+            candidato.setUfNascimento(bodyMap.get("uf_nascimento").toString());
         if(Objects.nonNull(bodyMap.get("created_at")))
             candidato.setDataCriacao(utilsService.convertToDate(bodyMap.get("created_at").toString()));
         if(Objects.nonNull(bodyMap.get("updated_at")))
