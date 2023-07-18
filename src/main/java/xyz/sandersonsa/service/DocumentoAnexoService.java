@@ -10,25 +10,25 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import xyz.sandersonsa.model.Fila;
+import xyz.sandersonsa.model.DocumentoAnexo;
 import xyz.sandersonsa.model.OperationEnum;
-import xyz.sandersonsa.repository.FilaRepository;
+import xyz.sandersonsa.repository.DocumentoAnexoRepository;
 import xyz.sandersonsa.utils.UtilsService;
 
 @ApplicationScoped
-public class FilaService {
+public class DocumentoAnexoService {
 
-    private static Logger logger = LoggerFactory.getLogger(FilaService.class);
+    private static Logger logger = LoggerFactory.getLogger(DocumentoAnexoService.class);
 
     @Inject
     UtilsService utilsService;
 
     @Inject
-    FilaRepository repository;
+    DocumentoAnexoRepository repository;
 
     @Transactional
     public void processar(Map bodyMap, String operation, String chavePrimaria){
-        logger.info(" ## PROCESSAR CANDIDATO COMISSAO ## - {}", operation);
+        logger.info(" ## PROCESSAR Documento Anexo ## - {}", operation);
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             repository.persist(salvar(bodyMap));
@@ -54,25 +54,31 @@ public class FilaService {
     }
 
 
-    private Fila atualizar(Fila objeto, Map bodyMap){
-        return preencher(objeto, bodyMap);
+    private DocumentoAnexo atualizar(DocumentoAnexo objeto, Map bodyMap){
+        return preencher(bodyMap, objeto);
     }
 
-    private Fila salvar(Map bodyMap){
-        Fila objeto = new Fila();
+    private DocumentoAnexo salvar(Map bodyMap){
+        DocumentoAnexo objeto = new DocumentoAnexo();
         objeto.setId(Long.parseLong(bodyMap.get("id").toString()));
-        return preencher(objeto, bodyMap);
+        return preencher(bodyMap, objeto);
     }
 
-    private Fila preencher(Fila objeto, Map bodyMap){
-        objeto.setCode(bodyMap.get("code").toString());
-        //date
+    private DocumentoAnexo preencher(Map bodyMap, DocumentoAnexo objeto) {        
+        objeto.setIdCandidatoComissao(Integer.parseInt(bodyMap.get("fk_candidato_comissao").toString()));
+        objeto.setIdTipoDocumento(Integer.parseInt(bodyMap.get("fk_tipo_documento").toString()));
         objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));
+        if(Objects.nonNull(bodyMap.get("deleted_at")))
+            objeto.setDeletedAt(utilsService.convertToDate(bodyMap.get("deleted_at").toString()));
         if(Objects.nonNull(bodyMap.get("updated_at")))
             objeto.setUpdatedAt(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
         
-        objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));
-        objeto.setAccessToken(bodyMap.get("access_token").toString());        
+            objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));        
+        if(Objects.nonNull(bodyMap.get("hash_storage")))
+            objeto.setHashStorage(bodyMap.get("hash_storage").toString());
+        if(Objects.nonNull(bodyMap.get("avaliador")))
+            objeto.setAvaliador(bodyMap.get("avaliador").toString());
+        objeto.setDocumentoBase64(bodyMap.get("documento_base64").toString());
         return objeto;
     }
 

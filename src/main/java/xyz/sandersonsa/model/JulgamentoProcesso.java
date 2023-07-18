@@ -13,8 +13,9 @@ import javax.persistence.Table;
 @Table(name = "julgamento_processo", schema = "popular")
 public class JulgamentoProcesso {
     
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Id
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "fk_candidato_comissao")
     private Integer idCandidatoComissao;
@@ -45,11 +46,11 @@ public class JulgamentoProcesso {
         this.operador = operador;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

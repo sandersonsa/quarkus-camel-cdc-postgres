@@ -13,8 +13,9 @@ import javax.persistence.Table;
 @Table(name = "fila_access_token", schema = "popular")
 public class FilaAccessToken {
     
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer id;
+    @Id
+    // @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "access_token")
     private String accessToken;
@@ -45,11 +46,11 @@ public class FilaAccessToken {
         this.userAgent = userAgent;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

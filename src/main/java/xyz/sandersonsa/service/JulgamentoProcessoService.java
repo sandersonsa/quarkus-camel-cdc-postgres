@@ -10,25 +10,25 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import xyz.sandersonsa.model.Fila;
+import xyz.sandersonsa.model.JulgamentoProcesso;
 import xyz.sandersonsa.model.OperationEnum;
-import xyz.sandersonsa.repository.FilaRepository;
+import xyz.sandersonsa.repository.JulgamentoProcessoRepository;
 import xyz.sandersonsa.utils.UtilsService;
 
 @ApplicationScoped
-public class FilaService {
+public class JulgamentoProcessoService {
 
-    private static Logger logger = LoggerFactory.getLogger(FilaService.class);
+    private static Logger logger = LoggerFactory.getLogger(JulgamentoProcessoService.class);
 
     @Inject
     UtilsService utilsService;
 
     @Inject
-    FilaRepository repository;
+    JulgamentoProcessoRepository repository;
 
     @Transactional
     public void processar(Map bodyMap, String operation, String chavePrimaria){
-        logger.info(" ## PROCESSAR CANDIDATO COMISSAO ## - {}", operation);
+        logger.info(" ## PROCESSAR JULGAMENTO PROCESSO ## - {}", operation);
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             repository.persist(salvar(bodyMap));
@@ -54,25 +54,27 @@ public class FilaService {
     }
 
 
-    private Fila atualizar(Fila objeto, Map bodyMap){
-        return preencher(objeto, bodyMap);
+    private JulgamentoProcesso atualizar(JulgamentoProcesso objeto, Map bodyMap){
+        return preencher(bodyMap, objeto);
     }
 
-    private Fila salvar(Map bodyMap){
-        Fila objeto = new Fila();
+    private JulgamentoProcesso salvar(Map bodyMap){
+        JulgamentoProcesso objeto = new JulgamentoProcesso();
         objeto.setId(Long.parseLong(bodyMap.get("id").toString()));
-        return preencher(objeto, bodyMap);
+        return preencher(bodyMap, objeto);
     }
 
-    private Fila preencher(Fila objeto, Map bodyMap){
-        objeto.setCode(bodyMap.get("code").toString());
-        //date
+    private JulgamentoProcesso preencher(Map bodyMap, JulgamentoProcesso objeto) {        
+        objeto.setIdCandidatoComissao(Integer.parseInt(bodyMap.get("fk_candidato_comissao").toString()));
+        objeto.setIdStatusValidacao(Integer.parseInt(bodyMap.get("fk_status_validacao").toString()));
         objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));
         if(Objects.nonNull(bodyMap.get("updated_at")))
             objeto.setUpdatedAt(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
-        
-        objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));
-        objeto.setAccessToken(bodyMap.get("access_token").toString());        
+        objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));        
+        if(Objects.nonNull(bodyMap.get("observacao")))
+            objeto.setObservacao(bodyMap.get("observacao").toString());
+        if(Objects.nonNull(bodyMap.get("operador")))
+            objeto.setOperador(bodyMap.get("operador").toString());
         return objeto;
     }
 

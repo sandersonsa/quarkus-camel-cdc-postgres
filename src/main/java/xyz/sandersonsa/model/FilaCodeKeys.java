@@ -13,8 +13,9 @@ import javax.persistence.Table;
 @Table(name = "fila_code_keys", schema = "popular")
 public class FilaCodeKeys {
     
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer id;
+    @Id
+    // @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "code")
     private String code;
@@ -45,11 +46,11 @@ public class FilaCodeKeys {
         this.userAgent = userAgent;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

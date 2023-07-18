@@ -10,21 +10,23 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import xyz.sandersonsa.model.Fila;
+import xyz.sandersonsa.model.CandidatoComissao;
+import xyz.sandersonsa.model.FilaCodeKeys;
 import xyz.sandersonsa.model.OperationEnum;
-import xyz.sandersonsa.repository.FilaRepository;
+import xyz.sandersonsa.repository.CandidatoComissaoRepository;
+import xyz.sandersonsa.repository.FilaCodeRepository;
 import xyz.sandersonsa.utils.UtilsService;
 
 @ApplicationScoped
-public class FilaService {
+public class FilaCodeService {
 
-    private static Logger logger = LoggerFactory.getLogger(FilaService.class);
+    private static Logger logger = LoggerFactory.getLogger(FilaCodeService.class);
 
     @Inject
     UtilsService utilsService;
 
     @Inject
-    FilaRepository repository;
+    FilaCodeRepository repository;
 
     @Transactional
     public void processar(Map bodyMap, String operation, String chavePrimaria){
@@ -54,25 +56,29 @@ public class FilaService {
     }
 
 
-    private Fila atualizar(Fila objeto, Map bodyMap){
+    private FilaCodeKeys atualizar(FilaCodeKeys objeto, Map bodyMap){
         return preencher(objeto, bodyMap);
     }
 
-    private Fila salvar(Map bodyMap){
-        Fila objeto = new Fila();
+    private FilaCodeKeys salvar(Map bodyMap){
+        FilaCodeKeys objeto = new FilaCodeKeys();
         objeto.setId(Long.parseLong(bodyMap.get("id").toString()));
         return preencher(objeto, bodyMap);
     }
 
-    private Fila preencher(Fila objeto, Map bodyMap){
+    private FilaCodeKeys preencher(FilaCodeKeys objeto, Map bodyMap){
         objeto.setCode(bodyMap.get("code").toString());
         //date
+        if(Objects.nonNull(bodyMap.get("expiration_code")))
+            objeto.setExpirationCode(utilsService.convertToDate(bodyMap.get("expiration_code").toString()));
         objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));
         if(Objects.nonNull(bodyMap.get("updated_at")))
             objeto.setUpdatedAt(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
         
         objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));
-        objeto.setAccessToken(bodyMap.get("access_token").toString());        
+        objeto.setSourceIp(bodyMap.get("source_ip").toString());
+        if(Objects.nonNull(bodyMap.get("user_agent")))
+            objeto.setUserAgent(bodyMap.get("user_agent").toString());
         return objeto;
     }
 

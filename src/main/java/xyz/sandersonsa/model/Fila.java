@@ -12,8 +12,9 @@ import javax.persistence.Table;
 @Table(name = "fila", schema = "popular")
 public class Fila {
     
-    @Id @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
-    private Integer id;
+    @Id
+    // @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "code")
     private String code;
@@ -37,11 +38,11 @@ public class Fila {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

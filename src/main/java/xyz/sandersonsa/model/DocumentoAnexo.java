@@ -12,8 +12,9 @@ import javax.persistence.Table;
 @Table(name = "documento_anexo", schema = "popular")
 public class DocumentoAnexo {
     
-    @Id @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
-    private Integer id;
+    @Id
+    // @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "fk_candidato_comissao")
     private Integer idCandidatoComissao;
@@ -54,11 +55,11 @@ public class DocumentoAnexo {
         this.documentoBase64 = documentoBase64;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

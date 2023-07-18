@@ -1,8 +1,6 @@
 package xyz.sandersonsa.service;
 
 import java.util.Map;
-import java.util.Objects;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -10,25 +8,25 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import xyz.sandersonsa.model.Fila;
+import xyz.sandersonsa.model.CandidatoRestricao;
 import xyz.sandersonsa.model.OperationEnum;
-import xyz.sandersonsa.repository.FilaRepository;
+import xyz.sandersonsa.repository.CandidatoRestricaoRepository;
 import xyz.sandersonsa.utils.UtilsService;
 
 @ApplicationScoped
-public class FilaService {
+public class CandidatoRestricaoService {
 
-    private static Logger logger = LoggerFactory.getLogger(FilaService.class);
+    private static Logger logger = LoggerFactory.getLogger(CandidatoRestricaoService.class);
 
     @Inject
     UtilsService utilsService;
 
     @Inject
-    FilaRepository repository;
+    CandidatoRestricaoRepository repository;
 
     @Transactional
     public void processar(Map bodyMap, String operation, String chavePrimaria){
-        logger.info(" ## PROCESSAR CANDIDATO COMISSAO ## - {}", operation);
+        logger.info(" ## PROCESSAR JULGAMENTO PROCESSO ## - {}", operation);
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             repository.persist(salvar(bodyMap));
@@ -54,25 +52,19 @@ public class FilaService {
     }
 
 
-    private Fila atualizar(Fila objeto, Map bodyMap){
-        return preencher(objeto, bodyMap);
+    private CandidatoRestricao atualizar(CandidatoRestricao objeto, Map bodyMap){
+        return preencher(bodyMap, objeto);
     }
 
-    private Fila salvar(Map bodyMap){
-        Fila objeto = new Fila();
+    private CandidatoRestricao salvar(Map bodyMap){
+        CandidatoRestricao objeto = new CandidatoRestricao();
         objeto.setId(Long.parseLong(bodyMap.get("id").toString()));
-        return preencher(objeto, bodyMap);
+        return preencher(bodyMap, objeto);
     }
 
-    private Fila preencher(Fila objeto, Map bodyMap){
-        objeto.setCode(bodyMap.get("code").toString());
-        //date
-        objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));
-        if(Objects.nonNull(bodyMap.get("updated_at")))
-            objeto.setUpdatedAt(utilsService.convertToDate(bodyMap.get("updated_at").toString()));
-        
-        objeto.setAtivo(Boolean.parseBoolean(bodyMap.get("ativo").toString()));
-        objeto.setAccessToken(bodyMap.get("access_token").toString());        
+    private CandidatoRestricao preencher(Map bodyMap, CandidatoRestricao objeto) {        
+        objeto.setIdCandidatoComissao(Integer.parseInt(bodyMap.get("candidato_comissao_id").toString()));
+        objeto.setRestricao(bodyMap.get("restricao").toString());
         return objeto;
     }
 
