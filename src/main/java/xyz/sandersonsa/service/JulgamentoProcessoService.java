@@ -30,7 +30,7 @@ public class JulgamentoProcessoService {
     public void processar(Map bodyMap, String operation, String chavePrimaria){
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
-            repository.persist(salvar(bodyMap));
+            repository.persistAndFlush(salvar(bodyMap));
 
         }
         else if(OperationEnum.UPDATE.getDescricao().equals(operation)) {            
