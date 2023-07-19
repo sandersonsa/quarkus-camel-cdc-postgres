@@ -114,7 +114,8 @@ public class CandidatoService {
             candidato.setUfOrgaoExpedidor(bodyMap.get("uf_orgao_expedidor").toString());
         if(Objects.nonNull(bodyMap.get("data_emissao_doc")))
             candidato.setDataEmissaoDoc(utilsService.convertToDate(bodyMap.get("data_emissao_doc").toString()));
-        candidato.setCpfNovo(bodyMap.get("cpf_novo").toString());
+        if(Objects.nonNull(bodyMap.get("cpf_novo")))
+            candidato.setCpfNovo(bodyMap.get("cpf_novo").toString());
         return candidato;
     }
 }
