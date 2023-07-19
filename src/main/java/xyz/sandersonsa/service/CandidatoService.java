@@ -27,8 +27,7 @@ public class CandidatoService {
     CandidatoRepository repository;
 
     @Transactional
-    public void processar(Map bodyMap, String operation, String chavePrimaria){
-        logger.info(" ## PROCESSAR CANDIDATO ## - {}", operation);
+    public void processar(Map bodyMap, String operation, String chavePrimaria){        
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             repository.persist(salvar(bodyMap));

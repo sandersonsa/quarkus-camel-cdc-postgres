@@ -28,7 +28,6 @@ public class JulgamentoProcessoService {
 
     @Transactional
     public void processar(Map bodyMap, String operation, String chavePrimaria){
-        logger.info(" ## PROCESSAR JULGAMENTO PROCESSO ## - {}", operation);
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             repository.persist(salvar(bodyMap));
@@ -64,7 +63,8 @@ public class JulgamentoProcessoService {
         return preencher(bodyMap, objeto);
     }
 
-    private JulgamentoProcesso preencher(Map bodyMap, JulgamentoProcesso objeto) {        
+    private JulgamentoProcesso preencher(Map bodyMap, JulgamentoProcesso objeto) {  
+        logger.info(" ## Preenchendo objeto JulgamentoProcesso ##");      
         objeto.setIdCandidatoComissao(Integer.parseInt(bodyMap.get("fk_candidato_comissao").toString()));
         objeto.setIdStatusValidacao(Integer.parseInt(bodyMap.get("fk_status_validacao").toString()));
         objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));

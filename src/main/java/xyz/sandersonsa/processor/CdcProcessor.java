@@ -70,42 +70,42 @@ public class CdcProcessor implements Processor {
         Map bodyMap = exchange.getIn().getBody(Map.class);
         
         if(TabelasEnum.CANDIDATOS.getDescricao().equals(table)) {            
-            logger.info(LOG_INFO, TabelasEnum.CANDIDATOS);
+            //logger.info(LOG_INFO, TabelasEnum.CANDIDATOS);
             candidatoService.processar(bodyMap, operation, chavePrimaria);        
         }
 
         else if(TabelasEnum.CANDIDATOS_COMISSAO.getDescricao().equals(table)) {
-            logger.info(LOG_INFO, TabelasEnum.CANDIDATOS_COMISSAO);
+            //logger.info(LOG_INFO, TabelasEnum.CANDIDATOS_COMISSAO);
             candidatoComissaoService.processar(bodyMap, operation, chavePrimaria);
         }
 
         else if(TabelasEnum.JULGAMENTO_PROCESSSO.getDescricao().equals(table)) {
-            logger.info(LOG_INFO, TabelasEnum.JULGAMENTO_PROCESSSO);
+            //logger.info(LOG_INFO, TabelasEnum.JULGAMENTO_PROCESSSO);
             julgamentoProcessoService.processar(bodyMap, operation, chavePrimaria);            
         }
 
         else if(TabelasEnum.DOCUMENTO_ANEXO.getDescricao().equals(table)) {
-            logger.info(LOG_INFO, TabelasEnum.DOCUMENTO_ANEXO);
+            //logger.info(LOG_INFO, TabelasEnum.DOCUMENTO_ANEXO);
             documentoAnexoService.processar(bodyMap, operation, chavePrimaria);
         }
 
         else if(TabelasEnum.CANDIDATO_RESTRICAO.getDescricao().equals(table)) {
-            logger.info(LOG_INFO, TabelasEnum.CANDIDATO_RESTRICAO);
+            //logger.info(LOG_INFO, TabelasEnum.CANDIDATO_RESTRICAO);
             candidatoRestricaoService.processar(bodyMap, operation, chavePrimaria);
         }
 
         else if(TabelasEnum.FILA_CODE.getDescricao().equals(table)) {
-            logger.info(LOG_INFO, TabelasEnum.FILA_CODE);
+            //logger.info(LOG_INFO, TabelasEnum.FILA_CODE);
             filaCodeService.processar(bodyMap, operation, chavePrimaria);
         }
 
         else if(TabelasEnum.FILA_ACCESS.getDescricao().equals(table)) {
-            logger.info(LOG_INFO, TabelasEnum.FILA_ACCESS);
+            //logger.info(LOG_INFO, TabelasEnum.FILA_ACCESS);
             filaAccessService.processar(bodyMap, operation, chavePrimaria);
         }
 
         else if(TabelasEnum.FILA.getDescricao().equals(table)) {
-            logger.info(LOG_INFO, TabelasEnum.FILA);
+            //logger.info(LOG_INFO, TabelasEnum.FILA);
             filaService.processar(bodyMap, operation, chavePrimaria);            
         }
 

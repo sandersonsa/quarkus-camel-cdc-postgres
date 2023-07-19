@@ -10,10 +10,8 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import xyz.sandersonsa.model.CandidatoComissao;
 import xyz.sandersonsa.model.FilaCodeKeys;
 import xyz.sandersonsa.model.OperationEnum;
-import xyz.sandersonsa.repository.CandidatoComissaoRepository;
 import xyz.sandersonsa.repository.FilaCodeRepository;
 import xyz.sandersonsa.utils.UtilsService;
 
@@ -29,8 +27,7 @@ public class FilaCodeService {
     FilaCodeRepository repository;
 
     @Transactional
-    public void processar(Map bodyMap, String operation, String chavePrimaria){
-        logger.info(" ## PROCESSAR CANDIDATO COMISSAO ## - {}", operation);
+    public void processar(Map bodyMap, String operation, String chavePrimaria){    
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             repository.persist(salvar(bodyMap));

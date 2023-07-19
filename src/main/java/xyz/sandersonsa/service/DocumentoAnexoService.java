@@ -28,7 +28,6 @@ public class DocumentoAnexoService {
 
     @Transactional
     public void processar(Map bodyMap, String operation, String chavePrimaria){
-        logger.info(" ## PROCESSAR Documento Anexo ## - {}", operation);
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             repository.persist(salvar(bodyMap));

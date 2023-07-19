@@ -11,10 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import xyz.sandersonsa.model.FilaAccessToken;
-import xyz.sandersonsa.model.JulgamentoProcesso;
 import xyz.sandersonsa.model.OperationEnum;
 import xyz.sandersonsa.repository.FilaAcessRepository;
-import xyz.sandersonsa.repository.JulgamentoProcessoRepository;
 import xyz.sandersonsa.utils.UtilsService;
 
 @ApplicationScoped
@@ -29,8 +27,7 @@ public class FilaAccessService {
     FilaAcessRepository repository;
 
     @Transactional
-    public void processar(Map bodyMap, String operation, String chavePrimaria){
-        logger.info(" ## PROCESSAR JULGAMENTO PROCESSO ## - {}", operation);
+    public void processar(Map bodyMap, String operation, String chavePrimaria){        
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             repository.persist(salvar(bodyMap));
