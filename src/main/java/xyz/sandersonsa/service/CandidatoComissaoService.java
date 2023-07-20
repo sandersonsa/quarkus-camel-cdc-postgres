@@ -2,6 +2,7 @@ package xyz.sandersonsa.service;
 
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -31,7 +32,12 @@ public class CandidatoComissaoService {
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             try {
-                repository.persistAndFlush(salvar(bodyMap));
+                CandidatoComissao candidatoComissao = salvar(bodyMap);
+                repository.persistAndFlush(candidatoComissao);
+                Optional<CandidatoComissao> candidatoComissaoOpt = repository.findByIdOptional(candidatoComissao.getId());
+                if(candidatoComissaoOpt.isPresent()){
+                    logger.info(" ## CandidatoComissao salvo com sucesso ## ");
+                }
             } catch (javax.persistence.PersistenceException e) {
                 logger.error("Erro ao salvar registro :: {}", e.getMessage());
             }
