@@ -30,7 +30,11 @@ public class JulgamentoProcessoService {
     public void processar(Map bodyMap, String operation, String chavePrimaria){
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
-            repository.persistAndFlush(salvar(bodyMap));
+            try {
+                repository.persistAndFlush(salvar(bodyMap));
+            } catch (javax.persistence.PersistenceException e) {
+                logger.error("Erro ao salvar registro :: {}", e.getMessage());
+            }
 
         }
         else if(OperationEnum.UPDATE.getDescricao().equals(operation)) {            
