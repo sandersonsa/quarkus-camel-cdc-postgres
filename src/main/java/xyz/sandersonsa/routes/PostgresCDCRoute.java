@@ -20,7 +20,7 @@ public class PostgresCDCRoute extends RouteBuilder {
                      // + "&tableWhitelist={{database.schema}}.table"
                      // + "&tableWhitelist={{database.schema}}.table1,{{database.schema}}.table2"
                      "&timePrecisionMode=connect" +
-                     // "&snapshotMode=never" +
+                     "&snapshotMode=never" +
                      "&pluginName=pgoutput";
 
        @Override
