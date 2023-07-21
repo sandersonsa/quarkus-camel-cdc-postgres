@@ -2,6 +2,7 @@ package xyz.sandersonsa.service;
 
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -10,6 +11,7 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import xyz.sandersonsa.model.FilaAccessToken;
 import xyz.sandersonsa.model.FilaCodeKeys;
 import xyz.sandersonsa.model.OperationEnum;
 import xyz.sandersonsa.repository.FilaCodeRepository;
@@ -32,6 +34,12 @@ public class FilaCodeService {
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             try {
                 repository.persistAndFlush(salvar(bodyMap));
+                FilaCodeKeys obj = salvar(bodyMap);
+                repository.persistAndFlush(obj);
+                Optional<FilaCodeKeys> objBD = repository.findByIdOptional(obj.getId());
+                if(objBD.isPresent()){
+                    logger.info(" ## FilaCodeKeys salvo com sucesso ## ");
+                }
             } catch (javax.persistence.PersistenceException e) {
                 logger.error("Erro ao salvar registro :: {}", e.getMessage());
             }
