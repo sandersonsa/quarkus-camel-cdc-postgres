@@ -532,3 +532,116 @@ public static class Converters {
         struct.getString("email"), struct.getInt64("question_id"));
   }
 }
+
+
+# quarkus.openshift.build-strategy=docker
+# quarkus.openshift.name=cdc-cnh-popular
+
+quarkus.devservices.enabled=false
+
+#%dev.quarkus.http.port=8080
+#%prod.quarkus.http.port=8080
+
+# BANCO DE ORIGEM
+app.cdc.dbz.offset.file=${CDC_OFFSET_FILE:/Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/dbhab-popular-offset-file-1.dat}
+app.cdc.db.name=${CDC_DB_SOURCE:dbhab}
+app.cdc.db.host=${CDC_DB_HOST:localhost}
+app.cdc.db.port=${CDC_DB_PORT:5577}
+app.cdc.db.user=${CDC_DB_USER:admin}
+app.cdc.db.password=${CDC_DB_PASSWD:admin}
+app.cdc.dbz.dbservername=${CDC_CONNECTOR_NAME:camel-dbz-connector}
+app.cdc.dbz.dbhistoryfile=${CDC_HISTORY_FILE:/Users/sandersonsa/arquivos/RedHat/git/camel-cdc-postgres/dbhab-popular-history-file-1.dat}
+app.cdc.dbz.schemaincludelist=${CDC_DB_SCHEMA:popular}
+app.cdc.dbz.tableincludelist=${CDC_DB_TABLES:popular.candidatos,popular.candidato_comissao,popular.julgamento_processo,popular.documento_anexo,popular.candidato_restricoes,popular.fila_code_keys,popular.fila_access_token,popular.fila,popular.comissoes}
+
+# BANCO DE DESTINO
+quarkus.datasource.db-kind=${CDC_DB_TARGET_KIND:postgresql}
+quarkus.datasource.username=${CDC_DB_TARGET_USER:admin}
+quarkus.datasource.password=${CDC_DB_TARGET_PASSWD:admin}
+quarkus.datasource.jdbc.url=${CDC_DB_TARGET_URL:jdbc:postgresql://localhost:5578/dbhab}
+quarkus.datasource.jdbc.max-size=16
+
+# quarkus.native.resources.includes=sql/*.sql
+
+# environment:
+quarkus.openshift.env.vars.CDC_OFFSET_FILE=/cdc/dbhab-popular-offset-file-1.dat
+quarkus.openshift.env.vars.CDC_DB_SOURCE=dbhab
+quarkus.openshift.env.vars.CDC_DB_HOST=postgresql
+quarkus.openshift.env.vars.CDC_DB_PORT=5432
+quarkus.openshift.env.vars.CDC_DB_USER=pg-detran
+quarkus.openshift.env.vars.CDC_DB_PASSWD=postgres-pwq2022
+quarkus.openshift.env.vars.CDC_CONNECTOR_NAME=camel-dbz-connector
+quarkus.openshift.env.vars.CDC_HISTORY_FILE=/cdc/dbhab-popular-history-file-1.dat
+quarkus.openshift.env.vars.CDC_DB_SCHEMA=popular
+quarkus.openshift.env.vars.CDC_DB_TABLES=popular.candidatos,popular.candidato_comissao,popular.julgamento_processo,popular.documento_anexo,popular.candidato_restricoes,popular.fila_code_keys,popular.fila_access_token,popular.fila,popular.comissoes
+
+quarkus.openshift.env.vars.CDC_DB_TARGET_KIND=postgresql
+quarkus.openshift.env.vars.CDC_DB_TARGET_USER=syscnhpopularcdc
+quarkus.openshift.env.vars.CDC_DB_TARGET_PASSWD=f06b7d59046acce73cacbf46818136ed40507bb7
+quarkus.openshift.env.vars.CDC_DB_TARGET_URL=jdbc:postgresql://postgresql.cnh-popular-cdc.svc.cluster.local:5432/dbhab
+quarkus.openshift.env.vars.TZ=America/Belem
+
+
+data:
+  CDC_OFFSET_FILE: '/cdc/dbhab-popular-offset-file-1.dat'
+  CDC_DB_SOURCE: 'dbhab'
+  CDC_DB_HOST: 'postgresql'
+  CDC_DB_PORT: '5432'
+  CDC_DB_USER: 'pg-detran'
+  CDC_DB_PASSWD: 'postgres-pwq2022'
+  CDC_CONNECTOR_NAME: 'camel-dbz-connector'
+  CDC_HISTORY_FILE: '/cdc/dbhab-popular-history-file-1.dat'
+  CDC_DB_SCHEMA: popular
+  CDC_DB_TABLES: 'popular.candidatos,popular.candidato_comissao,popular.julgamento_processo,popular.documento_anexo,popular.candidato_restricoes,popular.fila_code_keys,popular.fila_access_token,popular.fila,popular.comissoes'
+  CDC_DB_TARGET_KIND: 'postgresql'
+  CDC_DB_TARGET_USER: 'syscnhpopularcdc'
+  CDC_DB_TARGET_PASSWD: 'f06b7d59046acce73cacbf46818136ed40507bb7'
+  CDC_DB_TARGET_URL: 'jdbc:postgresql://postgresql.cnh-popular-cdc.svc.cluster.local:5432/dbhab'
+  TZ: 'America/Belem'
+  spring_profiles_active: 'dev'
+
+
+quarkus.openshift.pvc-volumes.pv-cdc1.claim-name=pv-cdc1
+quarkus.openshift.mounts.pv-cdc1.path=/cdc
+
+# data:
+# CDC_DB_PASSWD: postgres-pwq2022
+# CDC_HISTORY_FILE: /cdc/dbhab-popular-history-file-1.dat
+# CDC_DB_PORT: '5432'
+# CDC_DB_SCHEMA: popular
+# CDC_DB_TARGET_URL: 'jdbc:postgresql://172.25.136.129:5432/dbhab'
+# CDC_DB_TARGET_PASSWD: SyscnhP0pu74r22
+# CDC_DB_TABLES: >-
+#   popular.candidatos,popular.candidato_comissao,popular.julgamento_processo,popular.documento_anexo,popular.candidato_restricoes,popular.fila_code_keys,popular.fila_access_token,popular.fila,popular.comissoes
+# SPRINGBOOT_PROFILE: dev
+# CDC_OFFSET_FILE: /cdc/dbhab-popular-offset-file-1.dat
+# CDC_DB_HOST: postgresql
+# CDC_DB_USER: pg-detran
+# CDC_DB_TARGET_USER: syscnhpopular
+# CDC_CONNECTOR_NAME: camel-dbz-connector
+# CDC_DB_TARGET_KIND: postgresql
+# CDC_DB_SOURCE: dbhab
+
+
+# - DB_NAME=dbzdemo
+# - DBZ_OFFSET_FILE=/deployments/data/offset-file-1.dat
+# - DB_HOST=postgres
+# - DB_PORT=5432
+# - DB_USER=camel
+# - DB_PASSWORD=camel
+# - DBZ_DBSERVERNAME=camel-dbz-connector
+# - DBZ_DBHISTORYFILE=/deployments/data/history-file-1.dat
+# - DBZ_SCHEMAINCLUDELIST=braindose
+# - DBZ_TABLEINCLUDELIST=braindose.orders
+# - OUTPUT_DIR=/tmp/dbzdemo
+# - OUTPUT_FILENAME=dbz-camel-order.output
+
+# environment:
+# - POSTGRES_USER=camel
+# - POSTGRES_PASSWORD=camel
+# - PGPASSWORD=camel
+# - POSTGRES_DB=dbzdemo
+# - SCHEMA=braindose
+
+# popular.candidatos,popular.candidato_comissao,popular.julgamento_processo,popular.documento_anexo,
+# popular.candidato_restricoes,popular.fila_code_keys,popular.fila_access_token,popular.fila,popular.comissoes
