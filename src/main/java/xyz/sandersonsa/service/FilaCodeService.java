@@ -33,7 +33,6 @@ public class FilaCodeService {
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             try {
-                repository.persistAndFlush(salvar(bodyMap));
                 FilaCodeKeys obj = salvar(bodyMap);
                 repository.persistAndFlush(obj);
                 Optional<FilaCodeKeys> objBD = repository.findByIdOptional(obj.getId());

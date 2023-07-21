@@ -33,8 +33,7 @@ public class FilaAccessService {
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             try {
-                repository.persistAndFlush(salvar(bodyMap));
-                FilaAccessToken obj = salvar(bodyMap);
+                FilaAccessToken obj = salvar(bodyMap);                
                 repository.persistAndFlush(obj);
                 Optional<FilaAccessToken> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){

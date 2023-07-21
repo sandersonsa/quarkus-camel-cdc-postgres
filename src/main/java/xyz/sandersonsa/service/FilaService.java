@@ -33,7 +33,6 @@ public class FilaService {
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             try {
-                repository.persistAndFlush(salvar(bodyMap));
                 Fila obj = salvar(bodyMap);
                 repository.persistAndFlush(obj);
                 Optional<Fila> objBD = repository.findByIdOptional(obj.getId());

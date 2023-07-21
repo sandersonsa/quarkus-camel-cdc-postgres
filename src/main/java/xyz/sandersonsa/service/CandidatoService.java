@@ -34,8 +34,7 @@ public class CandidatoService {
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             try {
-                repository.persistAndFlush(salvar(bodyMap));
-                Candidato obj = salvar(bodyMap);
+                Candidato obj = salvar(bodyMap);                
                 repository.persistAndFlush(obj);
                 Optional<Candidato> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){

@@ -56,8 +56,7 @@ public class CdcProcessor implements Processor {
     FilaService filaService;
 
     private String LOG_INFO = " ## TIPO - {} ## ";
-
-    // @Transactional
+    
     public void process(Exchange exchange) throws Exception {        
 
         Message in = exchange.getIn();

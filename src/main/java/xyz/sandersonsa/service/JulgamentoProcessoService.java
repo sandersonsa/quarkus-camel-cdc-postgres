@@ -33,9 +33,8 @@ public class JulgamentoProcessoService {
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             try {
-                repository.persistAndFlush(salvar(bodyMap));
                 JulgamentoProcesso obj = salvar(bodyMap);
-                repository.persistAndFlush(obj);
+                repository.persistAndFlush(obj);                
                 Optional<JulgamentoProcesso> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){
                     logger.info(" ## JulgamentoProcesso salvo com sucesso ## ");

@@ -33,8 +33,7 @@ public class DocumentoAnexoService {
 
         if(OperationEnum.INSERT.getDescricao().equals(operation)) {            
             try {
-                repository.persistAndFlush(salvar(bodyMap));
-                DocumentoAnexo obj = salvar(bodyMap);
+                DocumentoAnexo obj = salvar(bodyMap);                
                 repository.persistAndFlush(obj);
                 Optional<DocumentoAnexo> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){
