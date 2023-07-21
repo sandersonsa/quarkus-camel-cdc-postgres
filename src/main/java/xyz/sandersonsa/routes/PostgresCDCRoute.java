@@ -26,13 +26,13 @@ public class PostgresCDCRoute extends RouteBuilder {
        @Override
        public void configure() throws Exception {
 
-              from(DBZ_SETTINGS)                     
-                     .log("\n\n----- ----- ----- ----- ----- ----- ----- ")
-                     .log(" #### #### EVENT RECEIVED FROM DEBEZIUM : ${body}")
-                     .log(" ## SOURCE DATASNAPSHOT COMPLETED :: ${headers.CamelDebeziumSourceMetadata}")                     
+              from(DBZ_SETTINGS)                                          
+                     // .log(" \n\n#### #### EVENT RECEIVED FROM DEBEZIUM : ${body}")
+                     .log(" \n\n#### #### EVENT RECEIVED FROM DEBEZIUM #### ####")
+                     // .log(" ## SOURCE DATASNAPSHOT COMPLETED :: ${headers.CamelDebeziumSourceMetadata}")                     
                      .setHeader("table", simple("${headers.CamelDebeziumSourceMetadata[db]}.${headers.CamelDebeziumSourceMetadata[table]}"))
                      .process("cdcProcessor")
-                     .log(" #### #### REGISTRO PROCESSADO COM SUCESSO - ${headers.CamelDebeziumSourceMetadata[table]} #### #### ")
+                     .log(" #### #### REGISTRO PROCESSADO :: ${headers.CamelDebeziumSourceMetadata[table]} #### #### ")
               ;
        }
 }
