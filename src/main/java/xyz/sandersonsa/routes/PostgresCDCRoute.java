@@ -28,11 +28,11 @@ public class PostgresCDCRoute extends RouteBuilder {
 
               from(DBZ_SETTINGS)                     
                      .log("\n\n----- ----- ----- ----- ----- ----- ----- ")
-                     .log(" ## Event received from Debezium : ${body}")
-                     // .log(" ## Source DataSnapshot Completed :: ${headers.CamelDebeziumSourceMetadata}")                     
+                     .log(" #### #### EVENT RECEIVED FROM DEBEZIUM : ${body}")
+                     .log(" ## SOURCE DATASNAPSHOT COMPLETED :: ${headers.CamelDebeziumSourceMetadata}")                     
                      .setHeader("table", simple("${headers.CamelDebeziumSourceMetadata[db]}.${headers.CamelDebeziumSourceMetadata[table]}"))
                      .process("cdcProcessor")
-                     .log(" #### Registro processado com sucesso - ${headers.CamelDebeziumSourceMetadata[table]} - ####### ")
+                     .log(" #### #### REGISTRO PROCESSADO COM SUCESSO - ${headers.CamelDebeziumSourceMetadata[table]} #### #### ")
               ;
        }
 }
