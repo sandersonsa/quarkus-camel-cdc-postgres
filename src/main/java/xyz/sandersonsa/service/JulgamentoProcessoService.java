@@ -38,6 +38,8 @@ public class JulgamentoProcessoService {
                 Optional<JulgamentoProcesso> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){
                     logger.info(" ## JulgamentoProcesso salvo com sucesso ## ");
+                }else {
+                    logger.info(" ## JulgamentoProcesso não foi salvo ## ");
                 }
             } catch (javax.persistence.PersistenceException e) {
                 logger.error("Erro ao salvar registro :: {}", e.getMessage());
@@ -74,8 +76,7 @@ public class JulgamentoProcessoService {
         return preencher(bodyMap, objeto);
     }
 
-    private JulgamentoProcesso preencher(Map bodyMap, JulgamentoProcesso objeto) {  
-        logger.info(" ## Preenchendo objeto JulgamentoProcesso ##");      
+    private JulgamentoProcesso preencher(Map bodyMap, JulgamentoProcesso objeto) {
         objeto.setIdCandidatoComissao(Integer.parseInt(bodyMap.get("fk_candidato_comissao").toString()));
         objeto.setIdStatusValidacao(Integer.parseInt(bodyMap.get("fk_status_validacao").toString()));
         objeto.setCreatedAt(utilsService.convertToDate(bodyMap.get("created_at").toString()));

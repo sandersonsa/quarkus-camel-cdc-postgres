@@ -38,6 +38,8 @@ public class FilaAccessService {
                 Optional<FilaAccessToken> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){
                     logger.info(" ## FilaAccessToken salvo com sucesso ## ");
+                }else {
+                    logger.info(" ## FilaAccessToken não foi salvo ## ");
                 }
             } catch (javax.persistence.PersistenceException e) {
                 logger.error("Erro ao salvar registro :: {}", e.getMessage());

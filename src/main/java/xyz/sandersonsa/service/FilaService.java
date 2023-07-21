@@ -38,6 +38,8 @@ public class FilaService {
                 Optional<Fila> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){
                     logger.info(" ## Fila salvo com sucesso ## ");
+                }else {
+                    logger.info(" ## Fila não foi salvo ## ");
                 }
             } catch (javax.persistence.PersistenceException e) {
                 logger.error("Erro ao salvar registro :: {}", e.getMessage());

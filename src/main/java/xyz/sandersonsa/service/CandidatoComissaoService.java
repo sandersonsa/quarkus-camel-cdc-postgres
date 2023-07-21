@@ -37,9 +37,11 @@ public class CandidatoComissaoService {
                 Optional<CandidatoComissao> candidatoComissaoOpt = repository.findByIdOptional(candidatoComissao.getId());
                 if(candidatoComissaoOpt.isPresent()){
                     logger.info(" ## CandidatoComissao salvo com sucesso ## ");
+                }else {
+                    logger.info(" ## CandidatoComissao não foi salvo ## ");
                 }
-            } catch (javax.persistence.PersistenceException e) {
-                logger.error("Erro ao salvar registro :: {}", e.getMessage());
+            } catch (Exception e) {
+                logger.error(" ## CandidatoComissao :: Erro ao salvar registro :: {}", e.getMessage());
             }
         }
         else if(OperationEnum.UPDATE.getDescricao().equals(operation)) {            

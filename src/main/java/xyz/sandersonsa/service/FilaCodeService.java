@@ -38,6 +38,8 @@ public class FilaCodeService {
                 Optional<FilaCodeKeys> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){
                     logger.info(" ## FilaCodeKeys salvo com sucesso ## ");
+                }else {
+                    logger.info(" ## FilaCodeKeys não foi salvo ## ");
                 }
             } catch (javax.persistence.PersistenceException e) {
                 logger.error("Erro ao salvar registro :: {}", e.getMessage());

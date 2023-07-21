@@ -39,6 +39,8 @@ public class CandidatoService {
                 Optional<Candidato> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){
                     logger.info(" ## Candidato salvo com sucesso ## ");
+                }else {
+                    logger.info(" ## Candidato não foi salvo ## ");
                 }
             } catch (javax.persistence.PersistenceException e) {
                 logger.error("Erro ao salvar registro :: {}", e.getMessage());

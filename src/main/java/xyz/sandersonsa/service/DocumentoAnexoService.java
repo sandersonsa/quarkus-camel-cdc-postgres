@@ -38,6 +38,8 @@ public class DocumentoAnexoService {
                 Optional<DocumentoAnexo> objBD = repository.findByIdOptional(obj.getId());
                 if(objBD.isPresent()){
                     logger.info(" ## DocumentoAnexo salvo com sucesso ## ");
+                }else {
+                    logger.info(" ## DocumentoAnexo não foi salvo ## ");
                 }
             } catch (javax.persistence.PersistenceException e) {
                 logger.error("Erro ao salvar registro :: {}", e.getMessage());
